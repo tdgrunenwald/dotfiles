@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# Link all files or scripts that should be in other directories
+#
+
+# symlink home dir configs
+for f in homedir/*; do ln -s ~/.config/$f ~/.$(echo $f | sed 's/homedir\///'); done

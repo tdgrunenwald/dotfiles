@@ -1,0 +1,19 @@
+# .bash_profile
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+	. ~/.bashrc
+fi
+
+# User specific environment and startup programs
+
+# android sdk
+export ANDROID_SDK_ROOT=~/.local/android-sdk
+
+# location of local binaries and executable scripts
+PATH=$PATH:$HOME/.local/bin:$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools
+
+if [[ "$(tty)" == "/dev/tty1" ]]; then
+	startx
+	exit 0
+fi

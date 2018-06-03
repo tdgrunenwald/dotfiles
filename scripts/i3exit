@@ -1,0 +1,30 @@
+#!/bin/bash
+lock() {
+	if [[ "$(hostname)" == "brobook" ]]; then
+		i3lock -e -i /home/tyler/pictures/blurred-hugo-boss.png
+	else
+		i3lock -e -c 002b36
+	fi
+}
+
+case $1 in
+	lock)
+		lock
+		;;
+	suspend)
+		lock && systemctl suspend
+		;;
+	hibernate)
+		lock && systemctl hibernate
+		;;
+	reboot)
+		systemctl reboot
+		;;
+	shutdown)
+		systemctl poweroff
+		;;
+	*)
+		echo "Usage: $0 {lock|suspend|hibernate|reboot|shutdown}"
+		exit 2
+esac
+exit 0
