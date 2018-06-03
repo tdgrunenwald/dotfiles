@@ -5,3 +5,7 @@
 
 # symlink home dir configs
 for f in homedir/*; do ln -s ~/.config/$f ~/.$(echo $f | sed 's/homedir\///'); done
+
+# symlink scripts to local scripts dir
+# TODO: check for dirs .local/bin/ and create if they don't exist already
+for f in scripts/*; do ln -s ~/.config/$f ~/.local/bin/$(echo $f | sed 's/scripts\///'); done
