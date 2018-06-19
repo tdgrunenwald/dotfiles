@@ -134,9 +134,9 @@ bindsym $mod+Shift+r restart
     bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
 
     # volume
-    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +10%
-    bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -10%
-    bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
+    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +10% && pkill -RTMIN+10 i3blocks
+    bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -10% && pkill -RTMIN+10 i3blocks
+    bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle && pkill -RTMIN+10 i3blocks
 
 #
 # System control mode:
@@ -172,7 +172,8 @@ bindsym $mod+Shift+o resize grow width 10 px or 10 ppt
 # finds out, if available)
 bar {
 	position top
-	status_command i3status -c ~/.config/i3status/$(hostname)
+	#status_command i3status -c ~/.config/i3status/$(hostname)
+	status_command i3blocks
 	separator_symbol " | "
 	font pango:Liberation Mono, Awesome 10
 	colors {

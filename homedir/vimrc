@@ -11,16 +11,11 @@ set viminfo='20,\"50	" read/write a .viminfo file, don't store more
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 
-" CUSTOM SETTINGS
-set tabstop=4
-set shiftwidth=4
-
-" Only do this part when compiled with support for autocommands
 if has("autocmd")
   augroup fedora
   autocmd!
-  " In text files, always limit the width of text to 78 characters
-  " autocmd BufRead *.txt set tw=78
+  " Set text width to 80 characters for common files
+  " autocmd BufRead, BuffNewFile *.md,*.txt,*.c,*.h,*.cpp,*.java set tw=80
   " When editing a file, always jump to the last cursor position
   autocmd BufReadPost *
   \ if line("'\"") > 0 && line ("'\"") <= line("$") |
@@ -66,3 +61,32 @@ endif
 " Don't wake up system with blinking cursor:
 " http://www.linuxpowertop.org/known.php
 let &guicursor = &guicursor . ",a:blinkon0"
+
+" 
+" CUSTOM SETTINGS
+"
+set tabstop=4
+set shiftwidth=4
+
+" set cursor shape to IBeam in insert mode, underline in replace mode, and block in normal mode.
+" sources: http://vim.wikia.com/wiki/Change_cursor_shape_in_different_modes
+"          https://vi.stackexchange.com/questions/3379/cursor-shape-under-vim-tmux
+"          https://vi.stackexchange.com/questions/7306/vim-normal-and-insert-mode-cursor-not-changing-in-gnu-screen
+" For GNU Screen
+let &t_SI = "\eP\e[6 q\e\\"
+let &t_SR = "\eP\e[4 q\e\\"
+let &t_EI = "\eP\e[2 q\e\\"
+" For TMUX
+"let &t_SI = "\<esc>Ptmux;\<esc>\e[6 q\<esc>\\"
+"let &t_SR = "\<esc>Ptmux;\<esc>\e[4 q\<esc>\\"
+"let &t_EI = "\<esc>Ptmux;\<esc>\e[2 q\<esc>\\"
+" For bare terminal (though the GNU screen settings appear to work fine as
+" well)
+"let &t_SI = "\e[6 q"
+"let &t_SR = "\e[4 q"
+"let &t_EI = "\e[2 q"
+
+" Solarized colors
+syntax enable
+set background=dark
+colorscheme solarized

@@ -2,6 +2,7 @@
 #
 # Link all files or scripts that should be in other directories
 #
+# TODO: script must be executed from .config directory to work properly. It'd be nice if that wasn't the case...
 
 # symlink home dir configs
 for f in homedir/*; do ln -s ~/.config/$f ~/.$(echo $f | sed 's/homedir\///'); done
