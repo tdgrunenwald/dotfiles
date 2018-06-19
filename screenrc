@@ -13,7 +13,7 @@
 deflogin on
 #autodetach off
 
-vbell on
+vbell off
 vbell_msg "   Wuff  ----  Wuff!!  "
 
 # all termcap entries are now duplicated as terminfo entries.
