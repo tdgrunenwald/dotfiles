@@ -13,7 +13,7 @@ fi
 # make sure terminal is set correctly for colored output
 export TERM='st-256color'
 export EDITOR='vim'
-export XDG_CONFIG_HOME='~/.config'
+export XDG_CONFIG_HOME='/home/tyler/.config'
 
 # use vi mode
 set -o vi

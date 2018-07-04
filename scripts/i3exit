@@ -3,7 +3,8 @@ lock() {
 	if [[ "$(hostname)" == "brobook" ]]; then
 		i3lock -e -i /home/tyler/pictures/blurred-hugo-boss.png
 	else
-		i3lock -e -c 002b36
+		#i3lock -e -c 002b36
+		betterlockscreen -l
 	fi
 }
 
