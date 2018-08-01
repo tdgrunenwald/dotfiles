@@ -10,6 +10,8 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+set $term st
+set $screen screen -c ~/.config/screenrc
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -30,7 +32,7 @@ font pango:monospace 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec st -e screen -c ~/.config/screenrc
+bindsym $mod+Return exec $term -e $screen
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -84,11 +86,22 @@ bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
-# toggle the scratchpad
-bindsym $mod+p scratchpad show
+# setup the scratchpads
+# first, a dropdown terminal for random stuff
+exec --no-startup-id $term -n dropdown -e $screen
+for_window [instance="dropdown"] floating enable
+for_window [instance="dropdown"] resize set 800 600
+for_window [instance="dropdown"] border pixel 5
+for_window [instance="dropdown"] move scratchpad
+bindsym $mod+t [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
 
-# move active window to scratchpad
-bindsym $mod+Shift+p move scratchpad
+# then, a python terminal for math
+exec --no-startup-id $term -n math -e python3
+for_window [instance="math"] floating enable
+for_window [instance="math"] resize set 850 400
+for_window [instance="math"] border pixel 5
+for_window [instance="math"] move scratchpad
+bindsym $mod+m [instance="math"] scratchpad show; [instance="math"] move position center
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
