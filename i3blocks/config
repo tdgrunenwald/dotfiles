@@ -36,7 +36,14 @@ separator=false
 [time]
 command=date '+%d %h %Y - %l:%M:%S %P'
 interval=1
-min_width=720
+min_width=1000
+
+# battery indicator
+#
+[battery]
+command=/home/tyler/.local/bin/battery
+label=Bat
+interval=30
 
 # Volume indicator
 #
