@@ -6,7 +6,7 @@
 xrdb -merge ~/.Xresources
 
 # set monitor layout correctly
-xrandr --auto --output HDMI-0 --mode 1920x1080 --left-of DVI-I-3 
+#xrandr --auto --output HDMI-0 --mode 1920x1080 --left-of DVI-I-3 
 
 # set background
 ~/.fehbg &

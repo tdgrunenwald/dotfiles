@@ -27,7 +27,7 @@
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
 command=/usr/local/libexec/i3blocks/$BLOCK_NAME
-separator_block_width=30
+separator_block_width=60
 markup=none
 separator=false
 
@@ -36,7 +36,7 @@ separator=false
 [time]
 command=date '+%d %h %Y - %l:%M:%S %P'
 interval=1
-min_width=585
+min_width=720
 
 # Volume indicator
 #

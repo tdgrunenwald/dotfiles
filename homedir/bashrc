@@ -9,11 +9,12 @@ fi
 # export SYSTEMD_PAGER=
 
 # User specific aliases and functions
-
-# make sure terminal is set correctly for colored output
-export TERM='st-256color'
+export TERM='st'
 export EDITOR='vim'
 export XDG_CONFIG_HOME='/home/tyler/.config'
+
+alias ls='ls --color=always'
+alias less='less -R'
 
 # use vi mode
 set -o vi
