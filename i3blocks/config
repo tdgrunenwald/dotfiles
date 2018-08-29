@@ -64,10 +64,10 @@ signal=10
 label=Mem
 interval=30
 
-[memory]
-label=Swap
-instance=swap
-interval=30
+#[memory]
+#label=Swap
+#instance=swap
+#interval=30
 
 # Disk usage
 #

@@ -1,18 +1,23 @@
+#
 # .bash_profile
+#
 
-# Get the aliases and functions
+# load custom aliases and functions
 if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
 fi
 
-# User specific environment and startup programs
+# set custom environment and startup programs
+export TERM='st'
+export EDITOR='vim'
+export XDG_CONFIG_HOME='/home/`whoami`/.config'
+export XDG_CACHE_HOME='/home/`whoami`/.cache'
+#export ANDROID_SDK_ROOT=~/.local/android-sdk
 
-# android sdk
-export ANDROID_SDK_ROOT=~/.local/android-sdk
-
-# location of local binaries and executable scripts
+# add location of local binaries and executable scripts to path
 PATH=$PATH:$HOME/.local/bin:$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools
 
+# start X but only on tty1
 if [[ "$(tty)" == "/dev/tty1" ]]; then
 	startx
 	exit 0

@@ -5,10 +5,12 @@
 ! set dpi to something sane for 3200x1800 screen
 Xft.dpi: 188
 
+! set terminal font and size
+st*font: DejaVu Sans Mono:pixelsize=28:antialias=true:autohint=true
+
 ! Solarized color scheme for the X Window System
 !
 ! http://ethanschoonover.com/solarized
-
 
 ! Common
 
@@ -51,28 +53,29 @@ Xft.dpi: 188
 !
 ! URxvt*background:            S_base03
 
-*background:              S_base03
-*foreground:              S_base0
 *fading:                  40
 *fadeColor:               S_base03
-*cursorColor:             S_base1
 *pointerColorBackground:  S_base01
 *pointerColorForeground:  S_base1
 
-*color0:                  S_base02
-*color1:                  S_red
-*color2:                  S_green
-*color3:                  S_yellow
-*color4:                  S_blue
-*color5:                  S_magenta
-*color6:                  S_cyan
-*color7:                  S_base2
-*color9:                  S_orange
-*color8:                  S_base03
-*color10:                 S_base01
-*color11:                 S_base00
-*color12:                 S_base0
-*color13:                 S_violet
-*color14:                 S_base1
-*color15:                 S_base3
+st*background:              S_base03
+st*foreground:              S_base0
+st*cursorColor:             S_base0
+
+st*color0:                  S_base02
+st*color1:                  S_red
+st*color2:                  S_green
+st*color3:                  S_yellow
+st*color4:                  S_blue
+st*color5:                  S_magenta
+st*color6:                  S_cyan
+st*color7:                  S_base2
+st*color8:                  S_base03
+st*color9:                  S_orange
+st*color10:                 S_base01
+st*color11:                 S_base00
+st*color12:                 S_base0
+st*color13:                 S_violet
+st*color14:                 S_base1
+st*color15:                 S_base3
 

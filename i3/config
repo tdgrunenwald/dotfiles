@@ -9,17 +9,34 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+# modifier key
 set $mod Mod4
+
+#
+# Default Programs and Commands
+# 
+# Terminal
 set $term st
-set $screen screen -c ~/.config/screenrc
+
+# Terminal multiplexer
+set $mux screen -c ~/.config/screenrc
+
+# App launcher
+set $launcher "dmenu -i -fn DejaVu-Sans-Mono -nb #002b36 -nf #839496 -sb #b58900 -sf #002b36"
+
+# Internet browser
+set $browser qutebrowser
+
+# File manager
+set $fileman $term -e ranger
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 10
+#font pango:monospace 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+font pango:DejaVu Sans Mono 10
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -32,18 +49,23 @@ font pango:monospace 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec $term -e $screen
+bindsym $mod+Return exec $term -e $mux
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec dmenu_run
-set $dmenu_cmd "dmenu -i -fn DejVu-Sans-Mono -nb #002b36 -nf #839496 -sb #b58900 -sf #002b36"
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu=$dmenu_cmd
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu=$launcher
 
 # start networkmanager_dmenu for changing wifi networks
 bindsym $mod+n exec --no-startup-id /usr/bin/python3 ~/.local/bin/networkmanager_dmenu
+
+# start browser
+bindsym $mod+b exec $browser
+
+# start file manager
+bindsym $mod+r exec $fileman
 
 # change focus
 bindsym $mod+h focus left
@@ -70,10 +92,12 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+b split h
+# consistent with the way a horizontal window split in vim is done
+bindsym $mod+Shift+v split v
 
 # split in vertical orientation
-bindsym $mod+v split v
+# consistent with the way a vertical window split in vim is done
+bindsym $mod+v split h 
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -85,9 +109,9 @@ bindsym $mod+e layout toggle split
 
 # setup the scratchpads
 # first, a dropdown terminal for random stuff
-exec --no-startup-id $term -n dropdown -e $screen
+exec --no-startup-id $term -n dropdown -e $mux
 for_window [instance="dropdown"] floating enable
-for_window [instance="dropdown"] resize set 800 600
+for_window [instance="dropdown"] resize set 1600 1200
 for_window [instance="dropdown"] border pixel 5
 for_window [instance="dropdown"] move scratchpad
 bindsym $mod+t [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
@@ -95,7 +119,7 @@ bindsym $mod+t [instance="dropdown"] scratchpad show; [instance="dropdown"] move
 # then, a python terminal for math
 exec --no-startup-id $term -n math -e python3
 for_window [instance="math"] floating enable
-for_window [instance="math"] resize set 850 400
+for_window [instance="math"] resize set 1700 800
 for_window [instance="math"] border pixel 5
 for_window [instance="math"] move scratchpad
 bindsym $mod+m [instance="math"] scratchpad show; [instance="math"] move position center
@@ -192,7 +216,7 @@ bar {
 	#status_command i3status -c ~/.config/i3status/$(hostname)
 	status_command i3blocks -c ~/.config/i3blocks/config
 	separator_symbol " | "
-	font pango:Liberation Mono, Awesome 10
+	font pango:DejaVu Sans Mono, Awesome 10
 	colors {
 		background #002b36
 		statusline #839496

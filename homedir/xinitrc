@@ -3,7 +3,9 @@
 #
 
 # merge settings in Xresources
-xrdb -merge ~/.Xresources
+if [[ -f ~/.Xresources ]]; then
+	xrdb -merge ~/.Xresources
+fi
 
 # set monitor layout correctly
 #xrandr --auto --output HDMI-0 --mode 1920x1080 --left-of DVI-I-3 
