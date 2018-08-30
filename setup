@@ -1,12 +1,49 @@
 #!/bin/sh
 #
-# Link all files or scripts that should be in other directories
+# Link config files to home directory and scripts to local scripts directory
 #
-# TODO: script must be executed from .config directory to work properly. It'd be nice if that wasn't the case...
+
+# change directories to the config directory where this script is located
+cd $(dirname $0)
+
+function fileOrDirExists {
+	return $([ -d $1 ] || [ -f $1 ])
+}
+
+echo Linking homedir configs...
 
 # symlink home dir configs
-for f in homedir/*; do ln -s ~/.config/$f ~/.$(echo $f | sed 's/homedir\///'); done
+if [[ -d homedir ]]; then
+	for f in homedir/*; do 
+		if ! fileOrDirExists ~/.$(basename $f); then
+			echo -n $(basename $f)...
+			ln -s ~/.config/$f ~/.$(basename $f)
+			echo done.
+		fi
+	done
+else
+	echo No homedir configs found.
+	exit 1
+fi
+
+echo Okay. Linking scripts...
+
+# make local scripts dirs if they don't exist already
+if ! [[ -d ~/.local/bin ]]; then mkdir -p ~/.local/bin; fi
 
 # symlink scripts to local scripts dir
-# TODO: check for dirs .local/bin/ and create if they don't exist already
-for f in scripts/*; do ln -s ~/.config/$f ~/.local/bin/$(echo $f | sed 's/scripts\///'); done
+if [[ -d scripts ]]; then
+	for f in scripts/*; do 
+		if ! fileOrDirExists ~/.local/bin/$(basename $f); then
+			echo -n $(basename $f)...
+			ln -s ~/.config/$f ~/.local/bin/$(basename $f)
+			echo done.
+		fi
+	done
+else
+	echo No scripts found.
+	exit 1
+fi
+
+echo Done!
+exit 0
