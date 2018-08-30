@@ -1,3 +1,4 @@
+#!/bin/sh
 # 
 # xinitrc
 #
@@ -7,11 +8,11 @@ if [[ -f ~/.Xresources ]]; then
 	xrdb -merge ~/.Xresources
 fi
 
-# set monitor layout correctly
-#xrandr --auto --output HDMI-0 --mode 1920x1080 --left-of DVI-I-3 
-
 # set background
-~/.fehbg &
+xsetroot -solid "#002b36"
+
+# ctrl+alt+bksp to kill X
+setxkbmap -option terminate:ctrl_alt_bksp
 
 # start i3
 exec i3

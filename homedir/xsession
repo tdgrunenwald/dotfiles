@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# .xsesson
+#
+
+# import bash profile for environment configuration
+[[ -f ~/.bash_profile ]] && source ~/.bash_profile
+
+# import xinitrc for startup programs
+[[ -f ~/.xinitrc ]] && source ~/.xinitrc
+

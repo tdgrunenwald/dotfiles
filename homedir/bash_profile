@@ -15,7 +15,10 @@ export XDG_CACHE_HOME='/home/tyler/.cache'
 #export ANDROID_SDK_ROOT=~/.local/android-sdk
 
 # add location of local binaries and executable scripts to path
-PATH=$PATH:$HOME/.local/bin:$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools
+PATH=$PATH:$HOME/.local/bin
+
+# add android platform tools to path
+#PATH=$PATH:$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools
 
 # start X but only on tty1
 if [[ "$(tty)" == "/dev/tty1" ]]; then
