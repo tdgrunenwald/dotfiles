@@ -12,6 +12,7 @@ export TERM='st'
 export EDITOR='vim'
 export XDG_CONFIG_HOME='/home/tyler/.config'
 export XDG_CACHE_HOME='/home/tyler/.cache'
+export GPG_TTY=$(tty)
 #export ANDROID_SDK_ROOT=~/.local/android-sdk
 
 # add location of local binaries and executable scripts to path

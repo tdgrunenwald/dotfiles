@@ -67,6 +67,9 @@ bindsym $mod+b exec $browser
 # start file manager
 bindsym $mod+r exec $fileman
 
+# open password manager
+bindsym $mod+p exec passmenu
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
