@@ -10,9 +10,13 @@ fi
 # uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
+# for gpg-agent
+export GPG_TTY=$(tty)
+
 # set custom aliases and functions
 alias ls='ls --color=always'
 alias less='less -R'
+alias vi='vim'
 
 # use vi mode
 set -o vi
