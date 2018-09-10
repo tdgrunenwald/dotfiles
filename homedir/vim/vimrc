@@ -15,7 +15,7 @@ if has("autocmd")
 	autocmd!
 
 	" Set text width to 80 characters for common files
-	"autocmd BufRead, BuffNewFile *.md,*.txt,*.c,*.h,*.cpp,*.java set tw=80
+	autocmd BufRead, BuffNewFile *.rmd,*.md,*.txt,*.c,*.h,*.cpp,*.java set tw=80
 
 	" When editing a file, always jump to the last cursor position
 	autocmd BufReadPost *
