@@ -34,7 +34,7 @@ separator=false
 # Date time indicator
 #
 [time]
-command=date '+%d %h %Y - %l:%M:%S %P'
+command=date '+%d %h %Y  %l:%M:%S %P'
 interval=1
 min_width=620
 
