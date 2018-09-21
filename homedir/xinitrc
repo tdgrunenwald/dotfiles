@@ -9,7 +9,7 @@ if [[ -f ~/.Xresources ]]; then
 fi
 
 # set background
-xsetroot -solid "#002b36"
+feh --bg-fill '/usr/share/backgrounds/fedora-workstation/aurora-over-iceland.png'
 
 # ctrl+alt+bksp to kill X
 setxkbmap -option terminate:ctrl_alt_bksp

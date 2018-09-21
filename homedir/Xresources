@@ -3,14 +3,14 @@
 !
 
 ! set dpi to something sane for 3200x1800 screen
-Xft.dpi: 188
+Xft.dpi: 92
 
 ! set terminal font and size
-st*font: DejaVu Sans Mono:pixelsize=28:antialias=true:autohint=true
+st*font: DejaVu Sans Mono:pixelsize=14:antialias=true:autohint=true
 
 ! also for dropdown terminals
-dropdown*font: DejaVu Sans Mono:pixelsize=28:antialias=true:autohint=true
-math*font: DejaVu Sans Mono:pixelsize=28:antialias=true:autohint=true
+dropdown*font: DejaVu Sans Mono:pixelsize=14:antialias=true:autohint=true
+math*font: DejaVu Sans Mono:pixelsize=14:antialias=true:autohint=true
 
 ! Solarized color scheme for the X Window System
 !
