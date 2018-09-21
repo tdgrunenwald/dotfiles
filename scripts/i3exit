@@ -1,6 +1,7 @@
 #!/bin/bash
 lock() {
-	dm-tool lock
+	#dm-tool lock
+	betterlockscreen -l
 }
 
 case $1 in
