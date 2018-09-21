@@ -16,19 +16,19 @@ set $mod Mod4
 # Default Programs and Commands
 # 
 # Terminal
-set $term st
+set $term /usr/local/bin/st
 
 # Terminal multiplexer
-set $mux screen -c ~/.config/screenrc
+set $mux /usr/bin/screen -c ~/.config/screenrc
 
 # App launcher
 set $launcher "dmenu -i -fn DejaVu-Sans-Mono -nb #002b36 -nf #839496 -sb #b58900 -sf #002b36"
 
 # Internet browser
-set $browser qutebrowser
+set $browser /usr/bin/qutebrowser
 
 # File manager
-set $fileman st -e ranger
+set $fileman /usr/local/bin/st -e /usr/bin/ranger
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -119,8 +119,8 @@ for_window [instance="dropdown"] border pixel 5
 for_window [instance="dropdown"] move scratchpad
 bindsym $mod+t [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
 
-# then, a python terminal for math
-exec --no-startup-id $term -n math -e python3
+# then, an R terminal for math
+exec --no-startup-id $term -n math -e /usr/bin/R --vanilla --quiet
 for_window [instance="math"] floating enable
 for_window [instance="math"] resize set 1700 800
 for_window [instance="math"] border pixel 5

@@ -15,6 +15,7 @@ export GPG_TTY=$(tty)
 
 # set custom aliases and functions
 alias ls='ls --color=always'
+alias tree='tree -C'
 alias less='less -R'
 alias vi='vim'
 
