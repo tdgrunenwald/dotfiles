@@ -1,0 +1,7 @@
+#!/bin/sh
+# apc ups battery status script for i3blocks
+#
+BAT=`apcaccess | grep BCHARGE | grep -E -o '[0-9]*\.0' | sed 's/\\.0//'`
+
+echo "$BAT%"
+test $BAT -le 10 && exit 33 || exit 0

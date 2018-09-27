@@ -1,2 +1,6 @@
+#
 # ~/.bash_logout
+#
 
+# clear history
+echo -n > ~/.bash_history

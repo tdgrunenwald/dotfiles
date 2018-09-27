@@ -85,6 +85,6 @@ interval=60
 [disk]
 label=Raid
 #label=  
-instance=/mnt/raid1
+instance=/home
 interval=60
 min_width=100
