@@ -79,6 +79,7 @@ label=Ssd
 #label=  
 instance=/
 interval=60
+min_width=150
 
 [disk]
 label=Raid

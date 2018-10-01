@@ -13,6 +13,10 @@
 # Type: Bool
 c.qt.highdpi = True
 
+# invert tab cycling keys (more intuitive to me)
+config.bind('J', 'tab-prev')
+config.bind('K', 'tab-next')
+
 # Enable JavaScript.
 # Type: Bool
 config.set('content.javascript.enabled', True, 'file://*')
