@@ -49,7 +49,7 @@ font pango:DejaVu Sans Mono 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec $term -e $mux
+bindsym $mod+Return exec --no-startup-id $term -e $mux
 
 # kill focused window
 bindsym $mod+Shift+q kill
