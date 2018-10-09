@@ -9,7 +9,8 @@ if [[ -f ~/.Xresources ]]; then
 fi
 
 # set background
-xsetroot -solid "#002b36"
+#xsetroot -solid "#002b36"
+~/.fehbg &
 
 # ctrl+alt+bksp to kill X
 setxkbmap -option terminate:ctrl_alt_bksp

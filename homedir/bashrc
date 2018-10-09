@@ -17,7 +17,8 @@ export GPG_TTY=$(tty)
 alias ls='ls --color=always'
 alias tree='tree -C'
 alias less='less -R'
-alias vi='vim'
+alias v='vim'
+alias srv='sudo rvim'
 
 # use vi mode
 set -o vi

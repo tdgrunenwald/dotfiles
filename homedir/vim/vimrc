@@ -2,17 +2,18 @@ if v:lang =~ "utf8$" || v:lang =~ "UTF-8$"
 	set fileencodings=ucs-bom,utf-8,latin1
 endif
 
-"set backup                      " keep a backup file
 set nocompatible                " Use Vim defaults (much better!)
 set backspace=indent,eol,start  " Allow backspacing over everything in insert mode
 set autoindent                  " Always set autoindenting on
-set viminfo='20,\"50            " Read/write a .viminfo file, don't store more than 50 lines of registers
+set viminfo='20,\"50            " Read/write a .viminfo file, don't store more
+                                " than 50 lines of registers
 set history=50                  " Keep 50 lines of command line history
 set ruler                       " Show the cursor position all the time
 set tabstop=4
 set shiftwidth=4
 set textwidth=80
 set number
+set cursorline
 
 if has("autocmd")
 	augroup fedora
