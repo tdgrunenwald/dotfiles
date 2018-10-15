@@ -9,7 +9,7 @@ fi
 
 # set custom environment and startup programs
 export TERM='st'
-export EDITOR='vim'
+export EDITOR='/usr/bin/vim'
 export XDG_CONFIG_HOME='/home/tyler/.config'
 export XDG_CACHE_HOME='/home/tyler/.cache'
 #export GPG_TTY=$(tty)

@@ -17,6 +17,11 @@ c.qt.highdpi = True
 config.bind('J', 'tab-prev')
 config.bind('K', 'tab-next')
 
+# disable quit bindings (use i3's instead)
+config.unbind('<Ctrl+q>')
+config.unbind('ZQ')
+config.unbind('ZZ')
+
 # Enable JavaScript.
 # Type: Bool
 config.set('content.javascript.enabled', True, 'file://*')
