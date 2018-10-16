@@ -36,7 +36,7 @@ separator=false
 [time]
 command=date '+%d %h %Y  %l:%M:%S %P'
 interval=1
-min_width=620
+min_width=600
 
 # battery indicator
 #
@@ -88,3 +88,11 @@ label=Raid
 instance=/home
 interval=60
 min_width=100
+
+# Updates indicator
+#
+[updates]
+command=/home/tyler/.local/bin/updates.sh
+interval=persist
+min_width=100
+
