@@ -12,6 +12,10 @@
 # this, it's possible to set font sizes and the `zoom.default` setting.
 # Type: Bool
 c.qt.highdpi = True
+c.qt.force_software_rendering = 'chromium'
+
+# use webkit backend for compatibility with nouveau graphics
+#config.set('backend', 'webkit')
 
 # Enable JavaScript.
 # Type: Bool
@@ -25,8 +29,16 @@ config.set('content.javascript.enabled', True, 'chrome://*/*')
 # Type: Bool
 config.set('content.javascript.enabled', True, 'qute://*/*')
 
-# base16-qutebrowser (https://github.com/theova/base16-qutebrowser)
-# Base16 qutebrowser template by theova
+# flip default tab nav bindings to be more intuitive
+config.bind('J', 'tab-prev')
+config.bind('K', 'tab-next')
+config.bind('<Ctrl-PgDown>', 'tab-prev')
+config.bind('<Ctrl-PgUp>', 'tab-next')
+
+# unbind quit hotkeys (should used i3 binding instead)
+config.unbind('ZQ')
+config.unbind('<Ctrl-q>')
+
 # Solarized Dark scheme by Ethan Schoonover (modified by aramisgithub)
 base00 = "#002b36"
 base01 = "#073642"
