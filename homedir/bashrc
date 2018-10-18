@@ -7,22 +7,19 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-# uncomment the following line if you don't like systemctl's auto-paging feature:
-# export SYSTEMD_PAGER=
+stty -ixon                             # disable ctrl-s ctrl-q pause/resume behavior
+shopt -s autocd                        # auto cd to directory by just typing its name
+shopt -so vi                           # use vi mode
+bind -m vi-insert "\C-l":clear-screen  # use Ctrl + L to clear screen in insert mode
 
-# for gpg-agent
-export GPG_TTY=$(tty)
+export GPG_TTY=$(tty)  # set current tty for gpg-agent
 
-# set custom aliases and functions
-alias ls='ls --color=always'
-alias less='less -R'
+alias grep='grep --color=auto'     # interpret ansi color codes if present
+alias less='less -R'               # always interpret ansi color codes
+alias ls='ls --color=auto --group-directories-first'
+alias pls='ls --color=always -la | less -R'  # paged ls with color
 alias vi='vim'
-
-# use vi mode
-set -o vi
-
-# use Ctrl + L to clear screen in insert mode
-bind -m vi-insert "\C-l":clear-screen
+alias v='vim'
 
 # display git branch in PS1
 parse_git_branch() {
