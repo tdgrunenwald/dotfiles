@@ -13,6 +13,7 @@ set tabstop=4
 set shiftwidth=4
 set textwidth=80
 set number
+set cursorline
 
 if has("autocmd")
 	augroup fedora
@@ -58,11 +59,16 @@ endif
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if &t_Co > 2 || has("gui_running")
-	syntax enable
-	set background=dark
-	let g:solarized_termtrans = 1
-	colorscheme solarized
 	set hlsearch
+	syntax enable
+	"set background=dark
+	"let g:solarized_termtrans = 1
+	if filereadable(expand("~/.vimrc_background"))
+		let base16colorspace=256
+		source ~/.vimrc_background
+	else
+		colorscheme solarized
+	endif
 endif
 
 filetype plugin on

@@ -21,6 +21,12 @@ alias pls='ls --color=always -la | less -R'  # paged ls with color
 alias vi='vim'
 alias v='vim'
 
+# Base16 Shell
+BASE16_SHELL="$HOME/code/rice/base16/base16-shell/"
+[ -n "$PS1" ] && \
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+        eval "$("$BASE16_SHELL/profile_helper.sh")"
+
 # display git branch in PS1
 parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
