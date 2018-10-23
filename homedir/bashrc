@@ -7,27 +7,30 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-# uncomment the following line if you don't like systemctl's auto-paging feature:
-# export SYSTEMD_PAGER=
+stty -ixon          # disable ctrl-s ctrl-q pause/resume behavior
+shopt -s autocd     # auto cd to directory by just typing its name
+shopt -so vi        # use vi mode
+bind -m vi-insert "\C-l":clear-screen  # ctrl+l clears screen in insert mode
 
-# for gpg-agent
-export GPG_TTY=$(tty)
+export GPG_TTY=$(tty)  # set current tty for gpg-agent
+export TERM='screen-256color'
 
-# set custom aliases and functions
-alias ls='ls --color=always --group-directories-first'
-alias tree='tree -C'
-alias less='less -R'
-alias v='vim'
-alias srv='sudo rvim'
+alias grep='/bin/grep --color=auto'     # interpret ansi color codes if present
+alias less='/bin/less -R'               # always interpret ansi color codes
+alias ls='/bin/ls --color=auto --group-directories-first'
+alias pls='/bin/ls --color=always -la | less -R'  # paged ls with color
+alias vi='/usr/bin/vim'
+alias v='/usr/bin/vim'
+alias tmux='/usr/bin/tmux -2 -f ~/.config/tmux/config'
 
-# use vi mode
-set -o vi
-
-# use Ctrl + L to clear screen in insert mode
-bind -m vi-insert "\C-l":clear-screen
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] && \
+	[ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+		eval "$("$BASE16_SHELL/profile_helper.sh")"
 
 # display git branch in PS1
 parse_git_branch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 export PS1="\[\$(tput bold)\]\u@\h \w\$(parse_git_branch) \$ \[\$(tput sgr0)\]"
