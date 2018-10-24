@@ -5,7 +5,7 @@
 
 # merge settings in Xresources
 if [[ -f ~/.Xresources ]]; then
-	xrdb -merge ~/.Xresources
+	xrdb -I$HOME -merge ~/.Xresources
 fi
 
 # set background

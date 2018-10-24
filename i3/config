@@ -212,26 +212,52 @@ bindsym $mod+Shift+u resize shrink height 10 px or 10 ppt
 bindsym $mod+Shift+i resize grow height 10 px or 10 ppt
 bindsym $mod+Shift+o resize grow width 10 px or 10 ppt
 
+# source colors from Xresources
+# form:
+# 	set_from_resource [var name] [resource name] [default/fallback]
+set_from_resource $base00 color0 "#181818"
+set_from_resource $base08 color1 "#282828"
+set_from_resource $base0B color2 "#383838"
+set_from_resource $base0A color3 "#585858"
+set_from_resource $base0D color4 "#b8b8b8"
+set_from_resource $base0E color5 "#d8d8d8"
+set_from_resource $base0C color6 "#e8e8e8"
+set_from_resource $base05 color7 "#f8f8f8"
+
+set_from_resource $base03 color8 "#ab4642"
+set_from_resource $base09 color9 "#dc9656"
+set_from_resource $base01 color10 "#f7ca88"
+set_from_resource $base02 color11 "#a1b56c"
+set_from_resource $base04 color12 "#86c1b9"
+set_from_resource $base06 color13 "#7cafc2"
+set_from_resource $base0F color14 "#ba8baf"
+set_from_resource $base07 color15 "#a16946"
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
 	position top
-	#status_command i3status -c ~/.config/i3status/$(hostname)
 	status_command i3blocks -c ~/.config/i3blocks/config
 	separator_symbol " | "
 	font pango:DejaVu Sans Mono, Awesome 10
 	colors {
-		background #002b36
-		statusline #839496
-		separator  #586e75
-		focused_workspace  #b58900 #b58900 #002b36
-		active_workspace   #586e75 #586e75 #002b36
-		inactive_workspace #073642 #002b36 #839496
-		urgent_workspace   #dc322f #dc322f #fdf6e3
+		background $base01
+		statusline $base04
+		separator  $base04
+		
+		# class            border  body    text
+		focused_workspace  $base02 $base02 $base06
+		active_workspace   $base09 $base09 $base04
+		inactive_workspace $base01 $base01 $base04
+		urgent_workspace   $base09 $base09 $base04
 	}
 }
 
-client.focused           #002b36 #586e75 #fdf6e3 #268bd2
-client.focused_inactive  #002b36 #073642 #839496 #073642
-client.unfocused         #002b36 #073642 #839496 #073642
-client.urgent            #002b36 #dc322f #fdf6e3 #002b36
+# class                  border   background  text     indicator  child_border
+client.focused           $base02  $base02     $base06  $base03    $base02
+client.focused_inactive  $base01  $base01     $base05  $base02    $base01
+client.unfocused         $base00  $base00     $base05  $base02    $base00
+client.urgent            $base07  $base07     $base04  $base06    $base07
+client.placeholder       $base00  $base01     $base04  $base00    $base01
+
+client.background $base00

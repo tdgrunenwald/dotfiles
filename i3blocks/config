@@ -51,6 +51,8 @@ interval=30
 # The second parameter overrides the mixer selection
 # See the script for details.
 [volume]
+command=/home/tyler/.local/bin/volume
+markup=pango
 label=Vol
 instance=Master
 #instance=PCM
