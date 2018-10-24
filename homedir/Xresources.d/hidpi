@@ -1,0 +1,3 @@
+! set dpi to something sane for 3200x1800 screen
+! include this file in .Xresources to enable
+Xft.dpi: 188
