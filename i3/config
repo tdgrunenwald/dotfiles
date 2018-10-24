@@ -249,7 +249,7 @@ bar {
 		focused_workspace  $base02 $base02 $base06
 		active_workspace   $base09 $base09 $base04
 		inactive_workspace $base01 $base01 $base04
-		urgent_workspace   $base09 $base09 $base04
+		urgent_workspace   $base09 $base09 #ffffff
 	}
 }
 
@@ -257,7 +257,7 @@ bar {
 client.focused           $base02  $base02     $base06  $base03    $base02
 client.focused_inactive  $base01  $base01     $base05  $base02    $base01
 client.unfocused         $base00  $base00     $base05  $base02    $base00
-client.urgent            $base07  $base07     $base04  $base06    $base07
+client.urgent            $base09  $base09     #ffffff  $base07    $base09
 client.placeholder       $base00  $base01     $base04  $base00    $base01
 
 client.background $base00
