@@ -20,6 +20,7 @@ alias ls='ls --color=auto --group-directories-first'
 alias pls='ls --color=always -la | less -R'  # paged ls with color
 alias vi='vim'
 alias v='vim'
+alias tmux='tmux -2 -f ~/.config/tmux/config'
 
 # Base16 Shell
 BASE16_SHELL="$HOME/code/rice/base16/base16-shell/"

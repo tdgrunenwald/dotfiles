@@ -19,7 +19,7 @@ set $mod Mod4
 set $term /usr/local/bin/st
 
 # Terminal multiplexer
-set $mux /bin/screen -c ~/.config/screenrc
+set $mux tmux
 
 # App launcher
 set $launcher "dmenu -i -fn DejaVu-Sans-Mono -nb #002b36 -nf #839496 -sb #b58900 -sf #002b36"
