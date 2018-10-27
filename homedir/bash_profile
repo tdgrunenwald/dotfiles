@@ -8,6 +8,7 @@ if [ -f ~/.bashrc ]; then
 fi
 
 # set custom environment and startup programs
+export LESSOPEN='' # prevent less from auto decrypting GPG encrypted files
 export EDITOR='/usr/bin/vim'
 export XDG_CONFIG_HOME='/home/tyler/.config'
 export XDG_CACHE_HOME='/home/tyler/.cache'
