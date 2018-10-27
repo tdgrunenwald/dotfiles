@@ -246,8 +246,8 @@ bar {
 		separator  $base04
 		
 		# class            border  body    text
-		focused_workspace  $base02 $base02 $base06
-		active_workspace   $base09 $base09 $base04
+		focused_workspace  $base0B $base0B $base02
+		active_workspace   $base02 $base02 $base05
 		inactive_workspace $base01 $base01 $base04
 		urgent_workspace   $base09 $base09 #ffffff
 	}
