@@ -174,8 +174,12 @@ bindsym $mod+Shift+r restart
 # Media Keys:
 #
     # brightness
-    bindsym XF86MonBrightnessUp exec brightnessctl s 10%+
-    bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
+    bindsym XF86MonBrightnessUp exec brightnessctl --device='intel_backlight' s 10%+
+    bindsym XF86MonBrightnessDown exec brightnessctl --device='intel_backlight' s 10%-
+
+	# kbd brightness
+	bindsym XF86KbdBrightnessUp exec brightnessctl --device='asus::kbd_backlight' s 1+
+	bindsym XF86KbdBrightnessDown exec brightnessctl --device='asus::kbd_backlight' s 1-
 
     # volume
     bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +10% && pkill -RTMIN+10 i3blocks
