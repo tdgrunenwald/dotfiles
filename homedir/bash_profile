@@ -20,4 +20,9 @@ PATH=$PATH:$HOME/.local/bin
 if [[ "$(tty)" == "/dev/tty1" ]]; then
 	startx
 	exit 0
+elif [[ "$TERM" == "linux" ]]; then
+	# start tmux if not in graphical environment
+	# check $TERM to prevent opening tmux recursively
+	# ^ ...don't actually know if that would happen, but better be safe
+	tmux
 fi
