@@ -16,6 +16,9 @@ export XDG_CACHE_HOME='/home/tyler/.cache'
 # add location of local binaries and executable scripts to path
 PATH=$PATH:$HOME/.local/bin
 
+# set umask for maximum privacy
+umask 077
+
 # start X but only on tty1
 if [[ "$(tty)" == "/dev/tty1" ]]; then
 	startx
