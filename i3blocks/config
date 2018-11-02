@@ -27,7 +27,7 @@
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
 command=/usr/local/libexec/i3blocks/$BLOCK_NAME
-separator_block_width=40
+separator_block_width=60
 markup=none
 separator=false
 
@@ -36,13 +36,13 @@ separator=false
 [time]
 command=date '+%d %h %Y - %l:%M:%S %P'
 interval=1
-min_width=650
+min_width=850
 
 # battery indicator
 #
 [battery]
-command=/home/tyler/.local/bin/apcbattery
-#command=/home/tyler/.local/bin/battery
+#command=/home/tyler/.local/bin/i3blocks/apcbattery
+command=/home/tyler/.local/bin/i3blocks/battery
 label=Bat
 interval=30
 
@@ -52,7 +52,7 @@ interval=30
 # The second parameter overrides the mixer selection
 # See the script for details.
 [volume]
-command=/home/tyler/.local/bin/volume
+command=/home/tyler/.local/bin/i3blocks/volume
 markup=pango
 label=Vol
 instance=Master
@@ -81,7 +81,7 @@ label=Ssd
 #label=  
 instance=/
 interval=60
-#min_width=150
+min_width=150
 
 [disk]
 label=Raid

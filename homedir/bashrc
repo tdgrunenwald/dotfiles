@@ -1,4 +1,4 @@
-#
+#!/usr/bin/env bash
 # .bashrc
 #
 
@@ -24,9 +24,10 @@ alias pls='/bin/ls --color=always -la | less -R'  # paged ls with color
 alias vi='/usr/bin/vim'
 alias v='/usr/bin/vim'
 alias tmux='/usr/bin/tmux -2 -f ~/.config/tmux/config'
+alias baseman='base16-manager'
 
 # Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/"
+BASE16_SHELL="$HOME/.base16-manager/chriskempson/base16-shell/"
 [ -n "$PS1" ] && \
 	[ -s "$BASE16_SHELL/profile_helper.sh" ] && \
 		eval "$("$BASE16_SHELL/profile_helper.sh")"

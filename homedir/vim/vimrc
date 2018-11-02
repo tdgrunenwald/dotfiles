@@ -61,9 +61,9 @@ endif
 if &t_Co > 2 || has("gui_running")
 	set hlsearch
 	syntax enable
-	if filereadable(expand("~/.vimrc_background"))
+	if filereadable(expand("~/.vim/colorscheme.vim"))
 		let base16colorspace=256
-		source ~/.vimrc_background
+		source ~/.vim/colorscheme.vim
 	endif
 endif
 

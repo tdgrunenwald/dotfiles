@@ -1,4 +1,4 @@
-#
+#!/usr/bin/env bash
 # .bash_profile
 #
 
@@ -25,4 +25,5 @@ elif [[ "$TERM" == "linux" ]]; then
 	# check $TERM to prevent opening tmux recursively
 	# ^ ...don't actually know if that would happen, but better be safe
 	tmux
+	exit 0
 fi

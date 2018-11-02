@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 # For use with i3blocks
 echo "Checking for updates..."
 dnf check-update > /dev/null

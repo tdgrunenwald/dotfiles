@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 # battery status script for i3blocks
 #
 BAT=`acpi -b | grep -E -o '[0-9]*%'`
