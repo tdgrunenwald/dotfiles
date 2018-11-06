@@ -165,26 +165,25 @@ bindsym $mod+Shift+0 move container to workspace 10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
+
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-#bindsym $mod+Shift+e exec i3-msg exit # Handled by system control mode below
 
 #
 # Media Keys:
 #
     # brightness
-    bindsym XF86MonBrightnessUp exec brightnessctl --device='intel_backlight' s 10%+
-    bindsym XF86MonBrightnessDown exec brightnessctl --device='intel_backlight' s 10%-
+	bindsym XF86MonBrightnessUp exec brightnessctl --device='intel_backlight' s 10%+
+	bindsym XF86MonBrightnessDown exec brightnessctl --device='intel_backlight' s 10%-
 
 	# kbd brightness
 	bindsym XF86KbdBrightnessUp exec brightnessctl --device='asus::kbd_backlight' s 1+
 	bindsym XF86KbdBrightnessDown exec brightnessctl --device='asus::kbd_backlight' s 1-
 
     # volume
-    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +10% && pkill -RTMIN+10 i3blocks
-    bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -10% && pkill -RTMIN+10 i3blocks
-    bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle && pkill -RTMIN+10 i3blocks
+	bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +10% && pkill -RTMIN+10 i3blocks
+	bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -10% && pkill -RTMIN+10 i3blocks
+	bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle && pkill -RTMIN+10 i3blocks
 
 #
 # System control mode:
