@@ -36,23 +36,31 @@ config.set('content.javascript.enabled', True, 'qute://*/*')
 
 # base16-qutebrowser (https://github.com/theova/base16-qutebrowser)
 # Base16 qutebrowser template by theova
-# Solarized Dark scheme by Ethan Schoonover (modified by aramisgithub)
-base00 = "#002b36"
-base01 = "#073642"
-base02 = "#586e75"
-base03 = "#657b83"
-base04 = "#839496"
-base05 = "#93a1a1"
-base06 = "#eee8d5"
-base07 = "#fdf6e3"
-base08 = "#dc322f"
-base09 = "#cb4b16"
-base0A = "#b58900"
-base0B = "#859900"
-base0C = "#2aa198"
-base0D = "#268bd2"
-base0E = "#6c71c4"
-base0F = "#d33682"
+# modified by tdgrunenwald to source base16 colors from Xresources
+import subprocess
+import re
+
+# query xrdb and parse result
+raw = subprocess.check_output(["xrdb", "-query"]).decode('utf-8')
+res = dict(re.findall("(color..?):\t(#......)", raw))
+
+# reverse color mappings from base16 Xresources
+base00 = res["color0"]
+base01 = res["color10"]
+base02 = res["color10"]
+base03 = res["color8"]
+base04 = res["color12"]
+base05 = res["color7"]
+base06 = res["color13"]
+base07 = res["color15"]
+base08 = res["color1"]
+base09 = res["color9"]
+base0A = res["color3"]
+base0B = res["color2"]
+base0C = res["color6"]
+base0D = res["color4"]
+base0E = res["color5"]
+base0F = res["color14"]
 
 # set qutebrowser colors
 c.colors.completion.category.bg = base00
