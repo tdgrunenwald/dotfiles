@@ -1,8 +1,15 @@
-#
-# config files to ignore such as autoconfigured files and history files
-#
+# .gitignore
+# 	autoconfig and history files
 
 ranger/history
 ranger/bookmarks
 ranger/tagged
+
 qutebrowser/autoconfig.yml
+qutebrowser/qsettings/
+qutebrowser/quickmarks
+
+Code/
+dconf/
+key-mon/
+pulse/
