@@ -1,0 +1,23 @@
+# Set screen brightness
+"brightnessctl --device='intel_backlight' s 10%+"
+	XF86MonBrightnessUp
+
+"brightnessctl --device='intel_backlight' s 10%-"
+	XF86MonBrightnessDown
+
+# Set keyboard brightness
+"brightnessctl --device='asus::kbd_backlight' s 1+"
+	XF86KbdBrightnessUp
+
+"brightnessctl --device='asus::kbd_backlight' s 1-"
+	XF86KbdBrightnessDown
+
+# Set volume
+"pactl set-sink-volume 0 +10% && pkill -RTMIN+10 i3blocks"
+	XF86AudioRaiseVolume
+
+"pactl set-sink-volume 0 -10% && pkill -RTMIN+10 i3blocks"
+	XF86AudioLowerVolume
+
+"pactl set-sink-mute 0 toggle && pkill -RTMIN+10 i3blocks"
+	XF86AudioMute

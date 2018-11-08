@@ -15,5 +15,8 @@ fi
 # ctrl+alt+bksp to kill X
 setxkbmap -option terminate:ctrl_alt_bksp
 
+# load custom keybindings for non DE specific things e.g. media keys
+xbindkeys -f ~/.config/xbindkeys/config
+
 # start i3
 exec i3
