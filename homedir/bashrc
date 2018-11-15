@@ -19,6 +19,7 @@ export GPG_TTY=$(tty)  # set current tty for gpg-agent
 #[ $TERM == "screen" ] && export TERM='screen-256color'
 #[ $TERM == "tmux" ] && export TERM='tmux-256color'
 
+alias rm='rm -I -v'   # prompt once and show verbose output
 alias grep='/bin/grep --color=auto'     # interpret ansi color codes if present
 alias less='/bin/less -R'               # always interpret ansi color codes
 alias ls='/bin/ls --color=auto --group-directories-first'
@@ -35,7 +36,4 @@ BASE16_SHELL="$HOME/.base16-manager/chriskempson/base16-shell/"
 		eval "$("$BASE16_SHELL/profile_helper.sh")"
 
 # display git branch in PS1
-parse_git_branch() {
-	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
-export PS1="\[\$(tput bold)\]\u@\h \w\$(parse_git_branch) \$ \[\$(tput sgr0)\]"
+export PS1="\[\$(tput bold)\]\u@\h \w\$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/') \\\$ \[\$(tput sgr0)\]"
