@@ -12,6 +12,7 @@ set ruler                       " Show the cursor position all the time
 set tabstop=4
 set shiftwidth=4
 set textwidth=80
+set noexpandtab
 set number
 set cursorline
 
