@@ -1,1 +1,1 @@
-colorscheme base16-nord
+colorscheme base16-woodland

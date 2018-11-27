@@ -24,8 +24,9 @@ alias grep='/bin/grep --color=auto'     # interpret ansi color codes if present
 alias less='/bin/less -R'               # always interpret ansi color codes
 alias ls='/bin/ls --color=auto --group-directories-first'
 alias pls='/bin/ls --color=always -la | less -R'  # paged ls with color
-alias vi='/usr/bin/vim'
-alias v='/usr/bin/vim'
+alias vim='/usr/bin/vim -c "source ~/.vim/vimrc"'
+alias vi='vim'
+alias v='vim'
 alias tmux='/usr/bin/tmux -2 -f ~/.config/tmux/config'
 alias baseman='base16-manager'
 

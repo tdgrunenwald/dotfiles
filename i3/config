@@ -121,7 +121,7 @@ bindsym $mod+e layout toggle split
 # first, a dropdown terminal for random stuff
 exec --no-startup-id $term -n dropdown -e $mux
 for_window [instance="dropdown"] floating enable
-for_window [instance="dropdown"] resize set 1600 1200
+for_window [instance="dropdown"] resize set 800 600
 for_window [instance="dropdown"] border pixel 5
 for_window [instance="dropdown"] move scratchpad
 bindsym $mod+t [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
@@ -129,7 +129,7 @@ bindsym $mod+t [instance="dropdown"] scratchpad show; [instance="dropdown"] move
 # then, an R terminal for math
 exec --no-startup-id $term -n math -e python3 -q
 for_window [instance="math"] floating enable
-for_window [instance="math"] resize set 1700 800
+for_window [instance="math"] resize set 850 400
 for_window [instance="math"] border pixel 5
 for_window [instance="math"] move scratchpad
 bindsym $mod+m [instance="math"] scratchpad show; [instance="math"] move position center

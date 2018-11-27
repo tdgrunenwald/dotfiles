@@ -12,6 +12,7 @@
 # this, it's possible to set font sizes and the `zoom.default` setting.
 # Type: Bool
 c.qt.highdpi = True
+c.qt.force_software_rendering = 'chromium'
 
 # invert tab cycling keys (more intuitive to me)
 config.bind('J', 'tab-prev')
