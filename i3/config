@@ -65,7 +65,7 @@ bindsym $mod+Return exec --no-startup-id $term -e $mux
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-# bindsym $mod+d exec dmenu_run
+bindsym $mod+r exec dmenu_run
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu=$launcher
 
 # start networkmanager_dmenu for changing wifi networks

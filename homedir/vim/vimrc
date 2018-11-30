@@ -17,6 +17,7 @@ set number
 set cursorline
 
 filetype plugin on
+filetype indent on
 
 if has("autocmd")
 	augroup vimrc
@@ -36,6 +37,7 @@ if has("autocmd")
 		autocmd BufNewFile *.spec 0r /usr/share/vim/vimfiles/template.spec
 
 		" Compile and run hotkeys
+		autocmd FileType markdown map <F5> :!pandoc -f markdown -t latex -s -o %:p:r.pdf %<enter>
 		autocmd Filetype rmd map <F5> :!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\|<space>R<space>--vanilla<enter>
 		autocmd Filetype tex map <F5> :!pdflatex -output-directory %:p:h %<enter>
 	augroup END
