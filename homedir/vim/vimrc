@@ -15,6 +15,7 @@ set textwidth=80
 set noexpandtab
 set number
 set cursorline
+set foldmethod=marker
 
 filetype plugin on
 filetype indent on
