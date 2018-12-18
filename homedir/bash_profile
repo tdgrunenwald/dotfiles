@@ -8,25 +8,19 @@ if [ -f ~/.bashrc ]; then
 fi
 
 # set custom environment and startup programs
-export LESSOPEN='' # prevent less from auto decrypting GPG encrypted files
-export EDITOR='/usr/bin/vim'
-export XDG_CONFIG_HOME='/home/tyler/.config'
-export XDG_CACHE_HOME='/home/tyler/.cache'
+export LESSOPEN="" # prevent less from auto decrypting GPG encrypted files
+export EDITOR="vim"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
 
 # add location of local binaries and executable scripts to path
-PATH=$PATH:$HOME/.local/bin
+PATH="$PATH:$HOME/.local/bin"
 
-# set umask for maximum privacy
-umask 077
+# set umask
+umask 022
 
 # start X but only on tty1
 if [[ "$(tty)" == "/dev/tty1" ]]; then
 	startx
-	exit 0
-elif [[ "$TERM" == "linux" ]]; then
-	# start tmux if not in graphical environment
-	# check $TERM to prevent opening tmux recursively
-	# ^ ...don't actually know if that would happen, but better be safe
-	tmux
 	exit 0
 fi

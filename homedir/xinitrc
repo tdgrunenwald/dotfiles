@@ -4,13 +4,10 @@
 #
 
 # merge settings in Xresources
-if [[ -f ~/.Xresources ]]; then
-	xrdb -I$HOME -merge ~/.Xresources
-fi
+[ -f ~/.Xresources ] && xrdb -I $HOME -merge ~/.Xresources
 
 # set background
-#xsetroot -solid "#002b36"
-~/.fehbg &
+[ -f ~/.fehbg ] && ~/.fehbg &
 
 # ctrl+alt+bksp to kill X
 setxkbmap -option terminate:ctrl_alt_bksp

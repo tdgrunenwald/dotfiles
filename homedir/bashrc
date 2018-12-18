@@ -10,24 +10,16 @@ fi
 stty -ixon          # disable ctrl-s ctrl-q pause/resume behavior
 shopt -s autocd     # auto cd to directory by just typing its name
 shopt -so vi        # use vi mode
-bind -m vi-insert "\C-l":clear-screen  # ctrl+l clears screen in insert mode
+bind -m vi-insert "\C-l":clear-screen
+bind -m vi-insert "\C-a":beginning-of-line
 
 export GPG_TTY=$(tty)  # set current tty for gpg-agent
-
-# set 256 color term for tmux sessions
-[ $TERM != "linux" ] && export TERM='tmux-256color'
-#[ $TERM == "screen" ] && export TERM='screen-256color'
-#[ $TERM == "tmux" ] && export TERM='tmux-256color'
 
 alias rm='rm -I -v'   # prompt once and show verbose output
 alias grep='/bin/grep --color=auto'     # interpret ansi color codes if present
 alias less='/bin/less -R'               # always interpret ansi color codes
 alias ls='/bin/ls --color=auto --group-directories-first'
 alias pls='/bin/ls --color=always -la | less -R'  # paged ls with color
-alias vi='/usr/bin/vim'
-alias v='/usr/bin/vim'
-alias tmux='/usr/bin/tmux -2 -f ~/.config/tmux/config'
-alias baseman='base16-manager'
 
 # Base16 Shell
 BASE16_SHELL="$HOME/.base16-manager/chriskempson/base16-shell/"
