@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 lock() {
 	dm-tool lock
+	#betterlockscreen --lock blur
 }
 
 case $1 in
@@ -20,7 +21,7 @@ case $1 in
 		systemctl poweroff
 		;;
 	*)
-		echo "Usage: $0 {lock|suspend|hibernate|reboot|shutdown}"
+		echo "Usage: $0 [lock|suspend|hibernate|reboot|shutdown]"
 		exit 2
 esac
 exit 0
