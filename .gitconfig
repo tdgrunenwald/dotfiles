@@ -1,0 +1,17 @@
+[user]
+	name = Tyler Grunenwald
+	email = tylergrunenwald@gmail.com
+[gpg]
+	program = gpg2
+
+[alias]
+	s = status
+	a = add
+	au = add -u
+	co = checkout
+	l = log
+	sm = submodule
+	cm = commit -m
+	rv = remote -v
+	bl = branch -l
+

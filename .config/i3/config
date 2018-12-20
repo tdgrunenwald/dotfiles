@@ -1,0 +1,222 @@
+# .config/i3/config (v4)
+
+# Define Colors: {{{
+# source colors from Xresources
+# [var name] [resource name] [default/fallback]
+set_from_resource $base00 color0 "#181818"
+set_from_resource $base08 color1 "#282828"
+set_from_resource $base0B color2 "#383838"
+set_from_resource $base0A color3 "#585858"
+set_from_resource $base0D color4 "#b8b8b8"
+set_from_resource $base0E color5 "#d8d8d8"
+set_from_resource $base0C color6 "#e8e8e8"
+set_from_resource $base05 color7 "#f8f8f8"
+
+set_from_resource $base03 color8 "#ab4642"
+set_from_resource $base09 color9 "#dc9656"
+set_from_resource $base01 color10 "#f7ca88"
+set_from_resource $base02 color11 "#a1b56c"
+set_from_resource $base04 color12 "#86c1b9"
+set_from_resource $base06 color13 "#7cafc2"
+set_from_resource $base0F color14 "#ba8baf"
+set_from_resource $base07 color15 "#a16946"
+
+set $white "#ffffff"
+# }}}
+
+# Window Visual Settings: {{{
+# set title bar font
+font pango:DejaVu Sans Mono 10
+
+# set window colors
+# class                  border   background  text     indicator  child_border
+client.focused           $base02  $base02     $base06  $base03    $base02
+client.focused_inactive  $base01  $base01     $base05  $base02    $base01
+client.unfocused         $base00  $base00     $base05  $base02    $base00
+client.urgent            $base09  $base09     $white   $base07    $base09
+client.placeholder       $base00  $base01     $base04  $base00    $base01
+
+client.background $base00
+# }}}
+
+# i3 Bar Settings: {{{
+bar {
+	position top
+	#status_command i3blocks -c ~/.config/i3blocks/config
+	status_command i3status
+	separator_symbol " | "
+	font pango:DejaVu Sans Mono, Awesome 10
+	colors {
+		background $base01
+		statusline $base04
+		separator  $base04
+		
+		# class            border  body    text
+		focused_workspace  $base0B $base0B $base02
+		active_workspace   $base02 $base02 $base05
+		inactive_workspace $base01 $base01 $base04
+		urgent_workspace   $base09 $base09 $white
+	}
+}
+# }}}
+
+# Window Management: {{{
+# set modifier key
+set $mod Mod4
+
+# set modifier for dragging floating windows with the mouse
+floating_modifier $mod
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# resize window (you can also use the mouse for that)
+bindsym $mod+Shift+y resize shrink width 10 px or 10 ppt
+bindsym $mod+Shift+u resize shrink height 10 px or 10 ppt
+bindsym $mod+Shift+i resize grow height 10 px or 10 ppt
+bindsym $mod+Shift+o resize grow width 10 px or 10 ppt
+
+# split in horizontal orientation
+# consistent with the way a horizontal window split in vim is done
+bindsym $mod+Shift+v split v
+
+# split in vertical orientation
+# consistent with the way a vertical window split in vim is done
+bindsym $mod+v split h 
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# kill focused window
+bindsym $mod+Shift+q kill
+# }}}
+
+# Workspaces: {{{
+# switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+# }}}
+
+# Scratchpads: {{{
+# dropdown terminal for background tasks
+exec --no-startup-id $term -n dropdown -e tmux
+for_window [instance="dropdown"] floating enable
+for_window [instance="dropdown"] resize set 700 400
+for_window [instance="dropdown"] border pixel 3
+for_window [instance="dropdown"] move scratchpad
+bindsym $mod+t [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
+# }}}
+
+# Modes: {{{
+# a system control mode for power management
+set $mode_system system (e)xit, (l)ock, (s)uspend, (h)ibernate, (r)eboot, (S)hutdown
+mode "$mode_system" {
+	bindsym e exec i3-msg exit
+	bindsym l exec --no-startup-id i3exit lock, mode "default"
+	bindsym s exec --no-startup-id i3exit suspend, mode "default" 
+	bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+	bindsym r exec --no-startup-id i3exit reboot
+	bindsym Shift+s exec --no-startup-id i3exit shutdown
+
+	# return to default mode
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+bindsym $mod+Shift+e mode "$mode_system"
+# }}}
+
+# Default Programs: {{{
+set $term           --no-startup-id st
+set $browser        surf
+# }}}
+
+# Program Bindings: {{{
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# start a terminal
+bindsym $mod+Return exec $term
+
+# start browser
+bindsym $mod+b exec $browser
+# }}}
+
+# Dmenu: {{{
+set $dmenu_run      --no-startup-id dmenu_run
+set $dmenu_desktop  --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -p desktop"
+set $dmenu_nm       --no-startup-id networkmanager_dmenu
+set $dmenu_pass     --no-startup-id passmenu -i -p pass
+
+# all executables
+bindsym $mod+r exec $dmenu_run
+
+# only .desktop files
+bindsym $mod+d exec $dmenu_desktop
+
+# network manager
+bindsym $mod+n exec $dmenu_nm
+
+# password manager
+bindsym $mod+p exec $dmenu_pass
+# }}}
