@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+_lock() {
+	# lock the screen
+	dm-tool lock
+}
+
+_shutdown() {
+	# turn off the system in an orderly manner
+	sudo shutdown -h now
+}
+
+_hibernate() {
+	# suspend to disk
+	sudo ZZZ
+}
+
+_sleep() {
+	# suspend to memory
+	sudo zzz
+}
+
+_reboot() {
+	# reboot the system
+	sudo shutdown -r now
+}
+
+case $1 in
+	lock)
+		_lock
+		;;
+	suspend)
+		_sleep
+		;;
+	hibernate)
+		_hibernate
+		;;
+	reboot)
+		_reboot
+		;;
+	shutdown)
+		_shutdown
+		;;
+	*)
+		echo "Usage: $0 [lock|suspend|hibernate|reboot|shutdown]"
+		exit 2
+esac
+exit 0
