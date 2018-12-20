@@ -4,22 +4,22 @@
 # source colors from Xresources
 # [var name] [resource name] [default/fallback]
 set_from_resource $base00 color0 "#181818"
-set_from_resource $base08 color1 "#282828"
-set_from_resource $base0B color2 "#383838"
-set_from_resource $base0A color3 "#585858"
-set_from_resource $base0D color4 "#b8b8b8"
-set_from_resource $base0E color5 "#d8d8d8"
-set_from_resource $base0C color6 "#e8e8e8"
-set_from_resource $base05 color7 "#f8f8f8"
+set_from_resource $base08 color1 "#ab4642"
+set_from_resource $base0B color2 "#a1b56c"
+set_from_resource $base0A color3 "#f7ca88"
+set_from_resource $base0D color4 "#7cafc2"
+set_from_resource $base0E color5 "#ba8baf"
+set_from_resource $base0C color6 "#86c1b9"
+set_from_resource $base05 color7 "#d8d8d8"
 
-set_from_resource $base03 color8 "#ab4642"
+set_from_resource $base03 color8 "#585858"
 set_from_resource $base09 color9 "#dc9656"
-set_from_resource $base01 color10 "#f7ca88"
-set_from_resource $base02 color11 "#a1b56c"
-set_from_resource $base04 color12 "#86c1b9"
-set_from_resource $base06 color13 "#7cafc2"
-set_from_resource $base0F color14 "#ba8baf"
-set_from_resource $base07 color15 "#a16946"
+set_from_resource $base01 color10 "#282828"
+set_from_resource $base02 color11 "#383838"
+set_from_resource $base04 color12 "#b8b8b8"
+set_from_resource $base06 color13 "#e8e8e8"
+set_from_resource $base0F color14 "#a16946"
+set_from_resource $base07 color15 "#f8f8f8"
 
 set $white "#ffffff"
 # }}}
@@ -170,11 +170,11 @@ bindsym $mod+t [instance="dropdown"] scratchpad show; [instance="dropdown"] move
 set $mode_system system (e)xit, (l)ock, (s)uspend, (h)ibernate, (r)eboot, (S)hutdown
 mode "$mode_system" {
 	bindsym e exec i3-msg exit
-	bindsym l exec --no-startup-id i3exit lock, mode "default"
-	bindsym s exec --no-startup-id i3exit suspend, mode "default" 
-	bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-	bindsym r exec --no-startup-id i3exit reboot
-	bindsym Shift+s exec --no-startup-id i3exit shutdown
+	bindsym l exec --no-startup-id powerctl lock, mode "default"
+	bindsym s exec --no-startup-id powerctl suspend, mode "default" 
+	bindsym h exec --no-startup-id powerctl hibernate, mode "default"
+	bindsym r exec --no-startup-id powerctl reboot
+	bindsym Shift+s exec --no-startup-id powerctl shutdown
 
 	# return to default mode
 	bindsym Return mode "default"

@@ -7,3 +7,6 @@ source ~/.bashrc
 export LESSHISTFILE=-
 export LESSSECURE=1
 export LESSOPEN=""
+
+# add scripts to path
+export PATH=$PATH:$HOME/.scripts
