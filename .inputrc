@@ -10,21 +10,21 @@ set completion-ignore-case on
 set completion-map-case on
 
 # vi key bindings
-set editing-mode vi
-set show-mode-in-prompt on
-set vi-ins-mode-string \`-insert-
-set vi-cmd-mode-string \`-normal-
+#set editing-mode vi
+#set show-mode-in-prompt on
+#set vi-ins-mode-string \`-insert-
+#set vi-cmd-mode-string \`-normal-
 
 # custom insert mode bindings
-set keymap vi-insert
-Control-l: clear-screen
-Control-a: beginning-of-line
+#set keymap vi-insert
+#Control-l: clear-screen
+#Control-a: beginning-of-line
 
 # don't interpret pasted characters as commands
 set enable-bracketed-paste on
 
 # don't wrap lines that are too long, scroll horizontally instead
-set horizontal-scroll-mode on
+#set horizontal-scroll-mode on
 
 # insert slash after auto-completing symlinked dirs
 set mark-symlinked-directories on
