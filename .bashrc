@@ -16,6 +16,9 @@ alias xq='xbps-query'
 # prompt before removing multiple files and show verbose output
 alias rm='rm -I -v'
 
+# other useful aliases
+alias ls='ls --color=auto --group-directories-first'
+
 # set current tty for gpg-agent
 export GPG_TTY=$(tty)
 
