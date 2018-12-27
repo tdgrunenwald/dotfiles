@@ -25,7 +25,8 @@
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
 command=/usr/libexec/i3blocks/$BLOCK_NAME
-separator_block_width=15
+separator_block_width=20
+separator=false
 markup=none
 
 # Volume indicator
@@ -34,7 +35,7 @@ markup=none
 # The second parameter overrides the mixer selection
 # See the script for details.
 [volume]
-label=VOL
+label=Vol
 #label=♪
 instance=Master
 #instance=PCM
@@ -45,12 +46,12 @@ signal=10
 #
 # The type defaults to "mem" if the instance is not specified.
 [memory]
-label=MEM
+label=Mem
 separator=false
 interval=30
 
 [memory]
-label=SWAP
+label=Swap
 instance=swap
 separator=false
 interval=30
@@ -61,8 +62,13 @@ interval=30
 # The script may be called with a optional argument to set the alert
 # (defaults to 10 for 10%).
 [disk]
-label=HOME
+label=/home
 #instance=/mnt/data
+interval=30
+
+[disk]
+label=/
+instance=/
 interval=30
 
 # Network interface monitoring
@@ -80,16 +86,16 @@ separator=false
 interval=10
 separator=false
 
-[bandwidth]
+#[bandwidth]
 #instance=eth0
-interval=5
+#interval=5
 
 # CPU usage
 #
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
 [cpu_usage]
-label=CPU
+label=Cpu
 interval=10
 min_width=CPU: 100.00%
 #separator=false
@@ -101,7 +107,7 @@ min_width=CPU: 100.00%
 #
 # The battery instance defaults to 0.
 [battery]
-label=BAT
+label=Bat
 #label=⚡
 #instance=1
 interval=30
@@ -109,8 +115,9 @@ interval=30
 # Date Time
 #
 [time]
-command=date '+%Y-%m-%d %H:%M:%S'
-interval=5
+command=date '+%a, %d %b %Y %I:%M:%S'
+interval=1
+min_width='DAY, DD MON YEAR HH:MM:SS '
 
 # Generic media player support
 #
