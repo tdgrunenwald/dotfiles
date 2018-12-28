@@ -1,0 +1,9 @@
+# volume control
+"amixer sset Master playback 2dB+ && pkill -RTMIN+10 i3blocks"
+	XF86AudioRaiseVolume
+
+"amixer sset Master playback 2dB- && pkill -RTMIN+10 i3blocks"
+	XF86AudioLowerVolume
+
+"amixer sset Master playback toggle && pkill -RTMIN+10 i3blocks"
+	XF86AudioMute
