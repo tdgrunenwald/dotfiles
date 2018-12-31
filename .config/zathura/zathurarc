@@ -1,0 +1,3 @@
+map w adjust_window width
+map p print
+map i recolor
