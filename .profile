@@ -14,6 +14,9 @@ export PATH=$PATH:$HOME/.scripts
 # set default editor
 export EDITOR="vim"
 
+# set CUPS default printer
+export PRINTER="HL-L2360DW"
+
 # start X on tty1
 if [ $(tty) == "/dev/tty1" ]; then
 	startx
