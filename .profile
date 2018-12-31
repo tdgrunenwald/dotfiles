@@ -15,4 +15,7 @@ export PATH=$PATH:$HOME/.scripts
 export EDITOR="vim"
 
 # start X on tty1
-[ $(tty) == "/dev/tty1" ] && startx
+if [ $(tty) == "/dev/tty1" ]; then
+	startx
+	exit 0
+fi
