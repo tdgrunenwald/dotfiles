@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 _lock() {
 	# lock the screen
-	dm-tool lock
+	betterlockscreen --lock
 }
 
 _shutdown() {
@@ -29,10 +29,10 @@ case $1 in
 		_lock
 		;;
 	suspend)
-		_sleep
+		_lock && _sleep
 		;;
 	hibernate)
-		_hibernate
+		_lock && _hibernate
 		;;
 	reboot)
 		_reboot
