@@ -90,25 +90,11 @@ separator=false
 #instance=eth0
 #interval=5
 
-# CPU usage
-#
-# The script may be called with -w and -c switches to specify thresholds,
-# see the script for details.
-[cpu_usage]
-label=Cpu
-interval=10
-min_width=CPU: 100.00%
-#separator=false
-
-#[load_average]
-#interval=10
-
 # Battery indicator
 #
 # The battery instance defaults to 0.
 [battery]
 label=Bat
-#label=⚡
 #instance=1
 interval=30
 
