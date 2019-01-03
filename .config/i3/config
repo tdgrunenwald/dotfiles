@@ -1,4 +1,4 @@
-# .config/i3/config (v4)
+# ~/.config/i3/config
 
 # Define Colors: {{{
 # source colors from Xresources
@@ -32,15 +32,21 @@ set $full_white "#ffffff"
 
 # Window Visual Settings: {{{
 # set title bar font
-font pango:DejaVu Sans Mono 8
+#font pango:DejaVu Sans Mono 8
+
+# disable window titles
+for_window [class="^.*"] border pixel 3
+
+# set default gaps
+gaps inner 20
 
 # set window colors
-# class                  title border   title background  title text   indicator  window border
-client.focused           $bright_black  $bright_black     $white       $cyan      $bright_black
-client.focused_inactive  $bright_black  $black            $white       $cyan      $bright_black
-client.unfocused         $black         $black            $white       $cyan      $black
-client.urgent            $red           $red              $full_white  $cyan      $red
-client.placeholder       $black         $black            $white       $cyan      $black
+# class                  title border   title background  title text   indicator      window border
+client.focused           $bright_black  $bright_black     $white       $blue          $blue
+client.focused_inactive  $bright_black  $black            $white       $bright_black  $bright_black
+client.unfocused         $black         $black            $white       $bright_black  $bright_black
+client.urgent            $red           $red              $full_white  $red           $red
+client.placeholder       $black         $black            $white       $black         $black
 
 client.background $black
 # }}}
@@ -96,11 +102,19 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# resize window (you can also use the mouse for that)
-bindsym $mod+Shift+y resize shrink width 10 px or 10 ppt
-bindsym $mod+Shift+u resize shrink height 10 px or 10 ppt
-bindsym $mod+Shift+i resize grow height 10 px or 10 ppt
-bindsym $mod+Shift+o resize grow width 10 px or 10 ppt
+# resize window with mod+Alt (Mod1 = Alt)
+bindsym $mod+Mod1+h resize shrink width 10 px or 10 ppt
+bindsym $mod+Mod1+j resize shrink height 10 px or 10 ppt
+bindsym $mod+Mod1+k resize grow height 10 px or 10 ppt
+bindsym $mod+Mod1+l resize grow width 10 px or 10 ppt
+
+# resize outer gaps
+bindsym $mod+Shift+o gaps outer all plus 5
+bindsym $mod+o gaps outer all minus 5
+
+# resize inner gaps
+bindsym $mod+Shift+i gaps inner all plus 5
+bindsym $mod+i gaps inner all minus 5
 
 # split in horizontal orientation
 # consistent with the way a horizontal window split in vim is done
@@ -125,10 +139,10 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+bindsym $mod+Shift+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+a focus child
 
 # kill focused window
 bindsym $mod+Shift+q kill
