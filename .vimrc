@@ -11,6 +11,9 @@ set number
 set autoindent
 set hlsearch
 
+" set syntax colors (this scheme came with my vim install)
+colorscheme desert
+
 " autocommands
 if has("autocmd")
 	augroup vimrc
