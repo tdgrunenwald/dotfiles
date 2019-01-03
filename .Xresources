@@ -1,4 +1,6 @@
 ! ~/.Xresources
+Xcursor.theme: Adwaita
+
 ! special
 *.foreground:   #d0c8c6
 *.background:   #3b3228

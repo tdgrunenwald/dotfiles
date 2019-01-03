@@ -32,7 +32,7 @@ set $full_white "#ffffff"
 
 # Window Visual Settings: {{{
 # set title bar font
-#font pango:DejaVu Sans Mono 8
+font pango:FuraCode Nerd Font 8
 
 # disable window titles
 for_window [class="^.*"] border pixel 3
@@ -55,8 +55,7 @@ client.background $black
 bar {
 	position top
 	status_command i3blocks -c ~/.config/i3blocks/config
-	separator_symbol " | "
-	font pango:DejaVu Sans Mono, Awesome 8
+	font pango:FuraCode Nerd Font 8
 	colors {
 		background $black
 		statusline $white
