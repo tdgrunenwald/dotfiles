@@ -175,7 +175,7 @@ bindsym $mod+Shift+0 move container to workspace 10
 
 # Scratchpads: {{{
 # dropdown terminal for background tasks
-exec --no-startup-id $term -n dropdown -e tmux
+exec --no-startup-id $term -n dropdown -e tmux new $SHELL
 for_window [instance="dropdown"] floating enable
 for_window [instance="dropdown"] resize set 700 400
 for_window [instance="dropdown"] border pixel 3
