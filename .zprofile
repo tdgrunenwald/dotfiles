@@ -9,7 +9,7 @@ export LESSSECURE=1
 export LESSOPEN=""
 
 # add scripts to path
-export PATH=$PATH:$HOME/.scripts
+export PATH="$PATH:$HOME/.scripts:$HOME/.local/bin"
 
 # set default editor
 export EDITOR="vim"
