@@ -1,7 +1,7 @@
-# ~/.profile
+# ~/.zprofile
 
-# include definitions from bashrc
-source ~/.bashrc
+# include definitions from zshrc
+source ~/.zshrc
 
 # make less more secure
 export LESSHISTFILE=-
@@ -18,7 +18,5 @@ export EDITOR="vim"
 export PRINTER="HL-L2360DW"
 
 # start X on tty1
-if [ $(tty) == "/dev/tty1" ]; then
-	startx
-	exit 0
-fi
+[ $(tty) = "/dev/tty1" ] && startx; exit 0
+

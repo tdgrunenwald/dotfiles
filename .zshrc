@@ -1,10 +1,23 @@
-# ~/.bashrc
+# include fish-like autosuggestions and command line syntax highlighting plugins
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# source global config
-[ -f /etc/bash/bashrc ] && source /etc/bash/bashrc
+# add custom zsh functions directory to functions path
+fpath=( "$HOME/.zfunctions" $fpath )
 
-# auto cd to directory by typing its name
-shopt -s autocd
+# set history file name and size
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+
+# set useful options
+setopt appendhistory autocd
+
+# unset annoying options
+unsetopt beep
+
+# use emacs-like key bindings
+bindkey -e
 
 # convenient package manager aliases
 alias sxi='sudo xbps-install'
@@ -92,5 +105,50 @@ unset color15
 clear
 # }}}
 
-# custom PS1 with time and git branch
-export PS1="\[\e[1;30;40m\]\T \[\e[1;37;40m\]\u@\h \W\$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/')\[\$(tput sgr0)\]\n\\\$ "
+# autoload completion and prompt functions
+autoload -Uz compinit promptinit
+compinit
+promptinit
+
+# set prompt to spaceship prompt
+prompt spaceship
+
+# configure spaceship prompt
+SPACESHIP_EXIT_CODE_SHOW=true
+SPACESHIP_DIR_TRUNC_REPO=false
+SPACESHIP_PROMPT_ORDER=(
+  #time          # Time stamps section
+  user          # Username section
+  dir           # Current directory section
+  host          # Hostname section
+  git           # Git section (git_branch + git_status)
+  #hg            # Mercurial section (hg_branch  + hg_status)
+  #package       # Package version
+  #node          # Node.js section
+  #ruby          # Ruby section
+  #elixir        # Elixir section
+  #xcode         # Xcode section
+  #swift         # Swift section
+  #golang        # Go section
+  #php           # PHP section
+  #rust          # Rust section
+  #haskell       # Haskell Stack section
+  #julia         # Julia section
+  #docker        # Docker section
+  #aws           # Amazon Web Services section
+  #venv          # virtualenv section
+  #conda         # conda virtualenv section
+  #pyenv         # Pyenv section
+  #dotnet        # .NET section
+  #ember         # Ember.js section
+  #kubecontext   # Kubectl context section
+  #terraform     # Terraform workspace section
+  exec_time     # Execution time
+  line_sep      # Line break
+  battery       # Battery level and status
+  vi_mode       # Vi-mode indicator
+  jobs          # Background jobs indicator
+  exit_code     # Exit code section
+  char          # Prompt character
+)
+
