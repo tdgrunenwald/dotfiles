@@ -2,6 +2,7 @@
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# Shell Options: {{{
 # add custom zsh functions directory to functions path
 fpath=( "$HOME/.zfunctions" $fpath )
 
@@ -19,6 +20,13 @@ unsetopt beep
 # use emacs-like key bindings
 bindkey -e
 
+# autoload completion and prompt functions
+autoload -Uz compinit promptinit
+compinit
+promptinit
+# }}}
+
+# Aliases: {{{
 # convenient package manager aliases
 alias sxi='sudo xbps-install'
 alias xi='xbps-install'
@@ -31,11 +39,14 @@ alias rm='rm -I -v'
 
 # other useful aliases
 alias ls='ls --color=auto --group-directories-first'
+# }}}
 
+# Environment Variables: {{{
 # set current tty for gpg-agent
 export GPG_TTY=$(tty)
+# }}}
 
-# Set terminal colors: {{{
+# Terminal Colors: {{{
 # adapded from Chris Kempson's base 16 shell (I'd didn't care for the use of 256 color space)
 # mocha dark theme from https://terminal.sexy
 color00="3b/32/28"
@@ -105,11 +116,7 @@ unset color15
 clear
 # }}}
 
-# autoload completion and prompt functions
-autoload -Uz compinit promptinit
-compinit
-promptinit
-
+# Prompt: {{{
 # set prompt to spaceship prompt
 prompt spaceship
 
@@ -151,4 +158,5 @@ SPACESHIP_PROMPT_ORDER=(
   exit_code     # Exit code section
   char          # Prompt character
 )
+# }}}
 
