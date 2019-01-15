@@ -20,6 +20,10 @@ if has("autocmd")
 		" clear autocommands
 		autocmd!
 
+		" templates
+		autocmd BufNewFile *.sh 0r ~/.vim/skel/sh
+		autocmd BufNewFile *.md 0r ~/.vim/skel/md
+
 		" compile hotkeys
 		autocmd FileType markdown map <F5> :!pandoc -f markdown -t latex -s -o %:p:r.pdf %<enter>
 		autocmd FileType tex map <F5> :!pdflatex -output-directory %:p:h %<enter>
