@@ -1,6 +1,7 @@
 ! ~/.Xresources
 Xcursor.theme: Adwaita
 
+! colorscheme: mocha dark (from https://terminal.sexy)
 ! special
 *.foreground:   #d0c8c6
 *.background:   #3b3228
