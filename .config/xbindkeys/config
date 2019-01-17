@@ -7,3 +7,10 @@
 
 "amixer sset Master playback toggle && pkill -RTMIN+10 i3blocks"
 	XF86AudioMute
+
+# brightness control
+"BR=$(cat /sys/class/backlight/radeon_bl0/brightness); echo $(( $BR + 10 )) | sudo tee /sys/class/backlight/radeon_bl0/brightness; unset $BR"
+	XF86MonBrightnessUp
+
+"BR=$(cat /sys/class/backlight/radeon_bl0/brightness); echo $(( $BR - 10 )) | sudo tee /sys/class/backlight/radeon_bl0/brightness; unset $BR"
+	XF86MonBrightnessDown
