@@ -10,6 +10,7 @@ set nocompatible
 set number
 set autoindent
 set hlsearch
+set textwidth=120
 
 " set syntax colors (this scheme came with my vim install)
 colorscheme desert
@@ -20,13 +21,13 @@ if has("autocmd")
 		" clear autocommands
 		autocmd!
 
-		" templates
-		autocmd BufNewFile *.sh 0r ~/.vim/skel/sh
-		autocmd BufNewFile *.md 0r ~/.vim/skel/md
+		" load a template for the given file extention if it exists
+		" templates should be ~/.vim/skel and have the same name as the extension
+		autocmd BufNewFile * if !empty(expand("%:t:e")) && !empty(glob("~/.vim/skel/" . expand('%:t:e'))) | 0r ~/.vim/skel/%:t:e | endif
 
 		" compile hotkeys
 		autocmd FileType markdown map <F5> :!pandoc -f markdown -t latex -s -o %:p:r.pdf %<enter>
-		autocmd FileType tex map <F5> :!pdflatex -output-directory %:p:h %<enter>
+		autocmd FileType tex map <F5> :!pdflatex -output-directory=%:p:h %<enter>
 	augroup END
 endif
 
