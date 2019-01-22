@@ -1,0 +1,27 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{geometry,setspace}
+\geometry{margin=1in}
+
+%% define an environment for the main body of text
+\newenvironment{content}
+{
+\doublespacing
+\setlength{\parskip}{1em}
+}
+{
+\singlespacing
+\setlength{\parskip}{0em}
+}
+
+\title{The Title Goes Here}
+\author{Tyler Grunenwald}
+
+\begin{document}
+\maketitle
+\begin{content}
+
+%% main body goes here
+
+\end{content}
+\end{document}
