@@ -1,0 +1,6 @@
+redact_pass	redact_pass.txt	/*redact_pass*
+redact_pass-author	redact_pass.txt	/*redact_pass-author*
+redact_pass-implementation	redact_pass.txt	/*redact_pass-implementation*
+redact_pass-license	redact_pass.txt	/*redact_pass-license*
+redact_pass-requirements	redact_pass.txt	/*redact_pass-requirements*
+redact_pass.txt	redact_pass.txt	/*redact_pass.txt*
