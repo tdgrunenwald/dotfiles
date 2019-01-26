@@ -202,7 +202,7 @@ bindsym $mod+Shift+e mode "$mode_system"
 # }}}
 
 # Default Programs: {{{
-set $term           --no-startup-id st
+set $term           --no-startup-id st -f "FuraCode Nerd Font:pixelsize=12"
 set $browser        surf
 # }}}
 
