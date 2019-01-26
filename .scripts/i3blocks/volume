@@ -58,7 +58,7 @@ strikethrough() {
 format() {
 	rawstat=$(cat)
 	level=$(echo -n $rawstat | awk -F "[][]" '{print $2}' | tail -n 1)
-	muted=$(echo -n $rawstat | awk -F "[][]" '{print $4}' | tail -n 1)
+	muted=$(echo -n $rawstat | awk -F "[][]" '{print $6}' | tail -n 1)
 	if [ $muted == "off" ]; then
 		echo $(strikethrough $level)
 	else

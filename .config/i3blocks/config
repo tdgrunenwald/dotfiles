@@ -33,6 +33,7 @@ label=Vol
 instance=Master
 interval=once
 signal=10
+markup=pango
 
 # Memory usage
 [memory]
