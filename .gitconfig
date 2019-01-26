@@ -5,14 +5,17 @@
 	program = gpg2
 
 [alias]
-	s = status
 	a = add
 	au = add -u
-	d = diff
-	co = checkout
-	l = log
-	sm = submodule
-	cm = commit -m
-	rv = remote -v
+	b = branch
 	bl = branch -l
+	c = commit
+	co = checkout
+	cm = commit -m
+	d = diff
+	l = log
+	r = remote
+	rv = remote -v
+	s = status
+	sm = submodule
 
