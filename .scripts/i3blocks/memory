@@ -1,0 +1,6 @@
+#!/bin/sh
+MEM_AVAIL=`cat /proc/meminfo | grep MemAvailable: | awk '{ print $2 }'`
+MEM_GB=`echo $MEM_AVAIL | awk '{ printf "%.2GG\n", ($1 / 1024^2) }'`
+
+echo -n "$MEM_GB"
+[ $MEM_AVAIL -lt 1000000 ] && exit 33 || exit 0
