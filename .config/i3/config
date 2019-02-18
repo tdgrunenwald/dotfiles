@@ -203,7 +203,7 @@ bindsym $mod+Shift+e mode "$mode_system"
 
 # Default Programs: {{{
 set $term           --no-startup-id st -f "FuraCode Nerd Font:pixelsize=12"
-set $browser        surf
+set $browser        firefox
 # }}}
 
 # Program Bindings: {{{
@@ -221,8 +221,8 @@ bindsym $mod+b exec $browser
 # }}}
 
 # Dmenu: {{{
-set $dmenu_run      --no-startup-id dmenu_run
-set $dmenu_desktop  --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -p desktop"
+set $dmenu_run      --no-startup-id dmenu_run -p bin
+set $dmenu_desktop  --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -p app"
 set $dmenu_nm       --no-startup-id networkmanager_dmenu
 set $dmenu_pass     --no-startup-id passmenu -i -p pass
 
