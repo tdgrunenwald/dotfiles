@@ -221,10 +221,9 @@ bindsym $mod+b exec $browser
 # }}}
 
 # Dmenu: {{{
-set $dmenu_run      --no-startup-id dmenu_run -p bin
-set $dmenu_desktop  --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -p app"
-set $dmenu_nm       --no-startup-id networkmanager_dmenu
-set $dmenu_pass     --no-startup-id passmenu -i -p pass
+set $dmenu_run      --no-startup-id dmenu_run -p Bin -fn FuraCode\ Nerd\ Font:pixelsize=12
+set $dmenu_desktop  --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -p Apps -fn FuraCode\ Nerd\ Font:pixelsize=12"
+set $dmenu_pass     --no-startup-id passmenu -i -p Pass -fn FuraCode\ Nerd\ Font:pixelsize=12
 set $dmenu_unicode  --no-startup-id dmenu_unicode -i -l 20
 
 # all executables
@@ -232,9 +231,6 @@ bindsym $mod+r exec $dmenu_run
 
 # only .desktop files
 bindsym $mod+d exec $dmenu_desktop
-
-# network manager
-bindsym $mod+n exec $dmenu_nm
 
 # password manager
 bindsym $mod+p exec $dmenu_pass
