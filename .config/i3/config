@@ -225,6 +225,7 @@ set $dmenu_run      --no-startup-id dmenu_run -p bin
 set $dmenu_desktop  --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -p app"
 set $dmenu_nm       --no-startup-id networkmanager_dmenu
 set $dmenu_pass     --no-startup-id passmenu -i -p pass
+set $dmenu_unicode  --no-startup-id dmenu_unicode -i -l 20
 
 # all executables
 bindsym $mod+r exec $dmenu_run
@@ -237,4 +238,7 @@ bindsym $mod+n exec $dmenu_nm
 
 # password manager
 bindsym $mod+p exec $dmenu_pass
+
+# unicode icon menu
+bindsym $mod+u exec $dmenu_unicode
 # }}}

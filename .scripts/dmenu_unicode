@@ -1,0 +1,2 @@
+#!/bin/sh
+cat ~/.nf-unicode | dmenu -fn "FuraCode Nerd Font:pixelsize=16" $@ | awk '{ ORS=""; print $1 }' | xclip -i -selection clipboard
