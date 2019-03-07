@@ -38,7 +38,7 @@ font pango:FuraCode Nerd Font 8
 for_window [class="^.*"] border pixel 3
 
 # set default gaps
-gaps inner 20
+#gaps inner 20
 
 # set window colors
 # class                  title border   title background  title text   indicator      window border
