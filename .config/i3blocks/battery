@@ -31,5 +31,9 @@ ICON=$B_FULL
 [[ ${CHRG%?} -lt 10 ]] && ICON=$B_EMPTY
 [[ $STATUS == "Charging" ]] && ICON=$B_CHRG
 
-echo "$ICON $CHRG"
-test ${CHRG%?} -le 20 && exit 33 || exit 0
+echo "$ICON $CHRG" # full text
+echo "$ICON $CHRG" # short text
+[ ${CHRG%?} -le 20 ] && COLOR="#FF8000" # text color
+[ ${CHRG%?} -le 10 ] && COLOR="#FF5500" # text color
+[ $COLOR != "" ] && echo $COLOR
+exit 0

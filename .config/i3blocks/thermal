@@ -1,6 +1,9 @@
 #!/bin/sh
-URG_THRESH=70
 TEMP=`acpi -t | awk '{ printf "%g\n", $4 | "sort" }' | tail -n 1`
 
-echo "$TEMP℃"
-[ $TEMP -gt 70 ] && exit 33 || exit 0
+echo "$TEMP℃" # full text
+echo "$TEMP℃" # short text
+[ $TEMP -gt 70 ] && COLOR="#FF8000" # text color
+[ $TEMP -gt 90 ] && COLOR="#FF5500" # text color
+[ $COLOR != "" ] && echo $COLOR
+exit 0

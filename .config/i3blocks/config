@@ -23,7 +23,7 @@
 # Global properties
 #command=/usr/libexec/i3blocks/$BLOCK_NAME
 command=~/.config/i3blocks/$BLOCK_NAME
-separator_block_width=20
+separator_block_width=15
 separator=false
 markup=none
 
@@ -52,9 +52,14 @@ interval=30
 label=
 interval=30
 
-# Date Time
-[time]
-command=date '+%a, %d %b %Y %I:%M:%S'
-interval=1
-min_width='DAY, DD MON YEAR HH:MM:SS '
+# Date
+[date]
+command=date '+%a, %d %b %Y'
+interval=3600
 
+# Time
+[time]
+command=echo "<span weight=\"bold\">`date '+%I:%M:%S'`</span>"
+interval=1
+min_width='HH:MM:SS '
+markup=pango
