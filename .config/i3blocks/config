@@ -29,7 +29,6 @@ markup=none
 
 # Volume indicator
 [volume]
-label=Vol
 instance=Master
 interval=once
 signal=10
@@ -37,7 +36,7 @@ markup=pango
 
 # Memory usage
 [memory]
-label=Mem
+label=
 separator=false
 interval=30
 
@@ -46,12 +45,11 @@ interval=30
 
 # Battery indicator
 [battery]
-label=Bat
 interval=30
 
 # Thermals
 [thermal]
-label=Temp
+label=
 interval=30
 
 # Date Time

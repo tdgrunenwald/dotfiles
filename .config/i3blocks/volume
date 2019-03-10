@@ -60,9 +60,10 @@ format() {
 	level=$(echo -n $rawstat | awk -F "[][]" '{print $2}' | tail -n 1)
 	muted=$(echo -n $rawstat | awk -F "[][]" '{print $6}' | tail -n 1)
 	if [ $muted == "off" ]; then
-		echo $(strikethrough $level)
+		# requires markup to be set to 'pango'
+		echo "<span alpha=\"85%\">婢 $level</span>"
 	else
-		echo $level
+		echo 墳 $level
 	fi
 }
 
