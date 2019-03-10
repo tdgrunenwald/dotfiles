@@ -22,7 +22,7 @@
 
 # Global properties
 #command=/usr/libexec/i3blocks/$BLOCK_NAME
-command=~/.scripts/i3blocks/$BLOCK_NAME
+command=~/.config/i3blocks/$BLOCK_NAME
 separator_block_width=20
 separator=false
 markup=none
