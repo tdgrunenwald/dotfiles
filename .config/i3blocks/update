@@ -1,0 +1,21 @@
+#!/bin/sh
+# Tyler Grunenwald | github.com/tdgrunenwald
+ICON="ﰵ"
+UCFILE=~/.update-count
+ULISTFILE=~/.update-list # TODO remove this after functionality is verified
+
+[ ! -f $UCFILE ] && echo -n "0" > $UCFILE
+
+UCOUNT=`cat $UCFILE`
+NEW_UPDATES=`xbps-install -Sun | tee $ULISTFILE | wc -l`
+#[ -z $NEW_UPDATES ] && NEW_UPDATES=0 # shouldn't be needed anymore
+
+UCOUNT=$(( $UCOUNT + $NEW_UPDATES ))
+
+echo $UCOUNT > $UCFILE
+
+if [ $UCOUNT -gt 0 ]; then
+	echo "$UCOUNT $ICON"
+	echo "$UCOUNT $ICON"
+	echo "#FF8000"
+fi

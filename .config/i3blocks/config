@@ -27,6 +27,11 @@ separator_block_width=15
 separator=false
 markup=none
 
+# Package Updates
+[update]
+interval=once
+signal=11
+
 # Volume indicator
 [volume]
 instance=Master
