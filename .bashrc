@@ -94,7 +94,7 @@ clear
 
 # Git status, adapted from Spaceship Prompt for Zsh (https://github.com/denysdovhan/spaceship-prompt) {{{
 show_git_status() {
-	GIT_STATUS_PREFIX="["
+	GIT_STATUS_PREFIX=" ["
 	GIT_STATUS_SUFFIX="]"
 	GIT_STATUS_UNTRACKED="?"
 	GIT_STATUS_ADDED="+"
@@ -110,7 +110,7 @@ show_git_status() {
 
 	INDEX=$(git status --porcelain -b 2> /dev/null)
 	[[ -z $INDEX ]] && return
-	GIT_BRANCH="on \e[1;35m $(echo $INDEX | sed -Ee '/^[^#]/d; s/## ([a-zA-Z0-9_/-]+?).*/\1/') "
+	GIT_BRANCH="on \e[1;35m $(echo $INDEX | sed -Ee '/^[^#]/d; s/## ([a-zA-Z0-9_/-]+?).*/\1/')"
 	GIT_STATUS=""
 
 
@@ -165,7 +165,10 @@ show_git_status() {
 		[[ "$IS_AHEAD" == true ]] && GIT_STATUS="$GIT_STATUS_AHEAD$GIT_STATUS"
 		[[ "$IS_BEHIND" == true ]] && GIT_STATUS="$GIT_STATUS_BEHIND$GIT_STATUS"
 	fi
-	echo -en $GIT_BRANCH$GIT_STATUS_COLOR$GIT_STATUS_PREFIX$GIT_STATUS$GIT_STATUS_SUFFIX
+
+	# Output final status line
+	echo -en $GIT_BRANCH
+	[[ -n $GIT_STATUS ]] && echo -en $GIT_STATUS_COLOR$GIT_STATUS_PREFIX$GIT_STATUS$GIT_STATUS_SUFFIX
 }
 # }}}
 
