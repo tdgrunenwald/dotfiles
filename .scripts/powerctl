@@ -32,7 +32,7 @@ case $1 in
 		_lock && _sleep
 		;;
 	hibernate)
-		_lock && _hibernate
+		_hibernate
 		;;
 	reboot)
 		_reboot
