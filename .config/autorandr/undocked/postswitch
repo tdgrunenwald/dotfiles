@@ -1,0 +1,3 @@
+#!/bin/sh
+# Tyler Grunenwald | github.com/tdgrunenwald
+feh --bg-fill $HOME/wallpapers/sts-atlantis.jpg
