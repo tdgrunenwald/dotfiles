@@ -1,15 +1,8 @@
-ource global config
+# Source global config
 [ -f /etc/bash/bashrc ] && source /etc/bash/bashrc
 
 # auto cd to directory by typing its name
 shopt -s autocd
-
-# Convenient package manager aliases
-alias sxi='sudo xbps-install'
-#alias xi='xbps-install' # Use xi from xtools package
-alias sxr='sudo xbps-remove'
-#alias xr='xbps-remove'
-#alias xq='xbps-query' # Use xq | xrs from xtools package
 
 # Prompt before removing multiple files and show verbose output
 alias rm='rm -I -v'
