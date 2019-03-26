@@ -1,3 +1,8 @@
 #!/bin/sh
 # Tyler Grunenwald | github.com/tdgrunenwald
+
+# Adjust background for single-monitor
 feh --bg-fill $HOME/wallpapers/sts-atlantis.jpg
+
+# Adjust lockscreen image for single-monitor
+unlink $HOME/.cache/i3lock/current && ln -s $HOME/.cache/i3lock/1366x768 $HOME/.cache/i3lock/current
