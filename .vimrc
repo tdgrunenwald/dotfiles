@@ -1,6 +1,6 @@
 " ~/.vimrc
 
-" standard settings
+" Standard settings
 syntax on
 set foldmethod=marker
 set tabstop=4
@@ -12,26 +12,29 @@ set autoindent
 set hlsearch
 set textwidth=120
 
-" set syntax colors (this scheme came with my vim install)
+" Set syntax colors (this scheme came with my vim install)
 colorscheme desert
 
-" autocommands
+" Helps with slow release of shift key when trying to exit
+nnoremap :Q :q
+
+" Autocommands
 if has("autocmd")
 	augroup vimrc
-		" clear autocommands
+		" Clear autocommands
 		autocmd!
 
-		" load a template for the given file extention if it exists
-		" templates should be ~/.vim/skel and have the same name as the extension
+		" Load a template for the given file extention if it exists
+		" Templates should be ~/.vim/skel and have the same name as the extension
 		autocmd BufNewFile * if !empty(expand("%:t:e")) && !empty(glob("~/.vim/skel/" . expand('%:t:e'))) | 0r ~/.vim/skel/%:t:e | endif
 
-		" compile hotkeys
+		" Compile hotkeys
 		autocmd FileType markdown map <F5> :!pandoc -f markdown -t latex -s -o %:p:r.pdf %<enter>
 		autocmd FileType tex map <F5> :!pdflatex -output-directory=%:p:h %<enter>
 	augroup END
 endif
 
-" set cursor shape to IBeam in insert mode, underline in replace mode, and block in normal mode.
+" Set cursor shape to IBeam in insert mode, underline in replace mode, and block in normal mode.
 " Sources http://vim.wikia.com/wiki/Change_cursor_shape_in_different_modes
 "	      https://vi.stackexchange.com/questions/3379/cursor-shape-under-vim-tmux
 "         https://vi.stackexchange.com/questions/7306/vim-normal-and-insert-mode-cursor-not-changing-in-gnu-screen
