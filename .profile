@@ -4,7 +4,7 @@
 source ~/.bashrc
 
 # Use default, C locale for shell messages
-export LC_ALL=C
+export LC_MESSAGES=C
 
 # Make less more secure
 export LESSHISTFILE=-
