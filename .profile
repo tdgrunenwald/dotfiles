@@ -3,6 +3,9 @@
 # Include definitions from bashrc
 source ~/.bashrc
 
+# Use default, C locale for shell messages
+export LC_ALL=C
+
 # Make less more secure
 export LESSHISTFILE=-
 export LESSSECURE=1
