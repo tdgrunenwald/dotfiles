@@ -1,10 +1,14 @@
 #!/bin/sh
 # Tyler Grunenwald | github.com/tdgrunenwald
 ICON="ﰵ"
-ULISTFILE=~/.update-list # TODO remove this after functionality is verified
 
-UCOUNT=`xbps-install -Sun | tee $ULISTFILE | wc -l`
+# Sync xbps repo data with remote
+sudo xbps-install -S > /dev/null
 
+# Count the available updates
+UCOUNT=`xbps-install -un | wc -l`
+
+# If there are updates available, show notifier
 if [ $UCOUNT -gt 0 ]; then
 	echo "$UCOUNT $ICON"
 	echo "$UCOUNT $ICON"
