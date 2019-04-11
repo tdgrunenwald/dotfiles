@@ -1,22 +1,34 @@
 " ~/.vimrc
 
-" Standard settings
-syntax on
+" Basic settings
 set foldmethod=marker
 set tabstop=4
 set shiftwidth=4
 set noexpandtab
 set nocompatible
 set number
+set relativenumber
 set autoindent
+set smartindent
 set hlsearch
-set textwidth=120
+set incsearch
+set textwidth=80
+set showcmd
+set background=dark
 
-" Set syntax colors (this scheme came with my vim install)
+" Syntax and filetype settings
+syntax on
+filetype plugin indent on
 colorscheme desert
 
 " Helps with slow release of shift key when trying to exit
 nnoremap :Q :q
+
+" Automatically insert matching brace|quote
+inoremap ( ()<ESC>i
+inoremap { {}<ESC>i
+inoremap [ []<ESC>i
+inoremap " ""<ESC>i
 
 " Autocommands
 if has("autocmd")
