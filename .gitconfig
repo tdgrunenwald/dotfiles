@@ -6,6 +6,7 @@
 
 [alias]
 	a = add
+	aa = add --all
 	au = add -u
 	b = branch
 	bl = branch -l
