@@ -3,6 +3,11 @@
 # Include definitions from bashrc
 source ~/.bashrc
 
+# Bash history settings
+export HISTFILE=$HOME/.history
+export HISTFILESIZE=1000
+export HISTCONTROL=ignorespace:ignoredups:erasedups
+
 # Use default, C locale for shell messages
 export LC_MESSAGES=C
 
