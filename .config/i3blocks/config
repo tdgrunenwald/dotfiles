@@ -32,6 +32,17 @@ markup=none
 interval=once
 signal=11
 
+# Memory usage
+[memory]
+label=
+separator=false
+interval=30
+
+# Thermals
+[thermal]
+label=
+interval=30
+
 # Volume indicator
 [volume]
 instance=Master
@@ -39,22 +50,11 @@ interval=once
 signal=10
 markup=pango
 
-# Memory usage
-[memory]
-label=
-separator=false
-interval=30
-
 # Network interface monitoring
 #TODO: implement
 
 # Battery indicator
 [battery]
-interval=30
-
-# Thermals
-[thermal]
-label=
 interval=30
 
 # Date

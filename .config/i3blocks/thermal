@@ -1,9 +1,5 @@
 #!/bin/sh
 TEMP=`acpi -t | awk '{ printf "%g\n", $4 | "sort" }' | tail -n 1`
-
-echo "$TEMP℃" # full text
-echo "$TEMP℃" # short text
-[ $TEMP -gt 70 ] && COLOR="#FF8000" # text color
-[ $TEMP -gt 90 ] && COLOR="#FF5500" # text color
-[ $COLOR != "" ] && echo $COLOR
+[ $TEMP -gt 70 ] && echo "$TEMP℃\n$TEMP℃\n#FF8000"
+[ $TEMP -gt 90 ] && echo "$TEMP℃\n$TEMP℃\n#FF5500"
 exit 0
