@@ -4,6 +4,7 @@ Xcursor.theme:  Adwaita
 ! fonts
 i3.font:        pango:FuraCode Nerd Font 8
 st.font:        FuraCode Nerd Font:pixelsize=12
+dropdown.font:  FuraCode Nerd Font:pixelsize=12
 
 #define default_bg   #2d2d2d
 #define bright_bg    #393939
