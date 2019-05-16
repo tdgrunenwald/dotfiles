@@ -1,11 +1,7 @@
 # ~/.config/i3/config
 
-# Define Colors: {{{
-# source colors from Xresources
+# Xresources: {{{
 # set_from_resource [var name] [resource name] [default/fallback]
-set_from_resource $black           color0   "#151515"
-set_from_resource $bright_black    color8   "#505050"
-
 set_from_resource $red             color1   "#ac4142"
 set_from_resource $bright_red      color9   "#ac4142"
 
@@ -24,47 +20,55 @@ set_from_resource $bright_magenta  color13  "#aa7f9f"
 set_from_resource $cyan            color6   "#75b5aa"
 set_from_resource $bright_cyan     color14  "#75b5aa"
 
-set_from_resource $white           color7   "#d0d0d0"
-set_from_resource $bright_white    color15  "#f5f5f5"
+set_from_resource $base00          base00   "#2d2d2d"
+set_from_resource $base01          base01   "#393939"
+set_from_resource $base02          base02   "#515151"
+set_from_resource $base03          base03   "#747369"
+set_from_resource $base04          base04   "#a09f93"
+set_from_resource $base05          base05   "#d3d0c8"
+set_from_resource $base06          base06   "#e8e6df"
+set_from_resource $base07          base07   "#f2f0ec"
+
+set_from_resource $font            i3.font  "pango:FuraCode Nerd Font 8"
 
 set $full_white "#ffffff"
 # }}}
 
 # Window Visual Settings: {{{
 # set title bar font
-font pango:FuraCode Nerd Font 8
+font $font
 
 # disable window titles
-for_window [class="^.*"] border pixel 3
+#for_window [class="^.*"] border pixel 3
 
 # set default gaps
 #gaps inner 20
 
 # set window colors
 # class                  title border   title background  title text   indicator      window border
-client.focused           $bright_black  $bright_black     $white       $blue          $blue
-client.focused_inactive  $bright_black  $black            $white       $bright_black  $bright_black
-client.unfocused         $black         $black            $white       $bright_black  $bright_black
+client.focused           $base03        $base03           $base07      $blue          $base03
+client.focused_inactive  $base02        $base02           $base06      $base02        $base02
+client.unfocused         $base01        $base01           $base05      $base01        $base01
 client.urgent            $red           $red              $full_white  $red           $red
-client.placeholder       $black         $black            $white       $black         $black
+client.placeholder       $base00        $base00           $base05      $base01        $base00
 
-client.background $black
+client.background $base00
 # }}}
 
 # i3 Bar Settings: {{{
 bar {
 	position bottom
 	status_command i3blocks -c ~/.config/i3blocks/config
-	font pango:FuraCode Nerd Font 8
+	font $font
 	colors {
-		background $black
-		statusline $white
-		separator  $white
+		background $base01
+		statusline $base05
+		separator  $base05
 		
 		# class            border         body           text
-		focused_workspace  $green         $green         $full_white
-		active_workspace   $bright_black  $bright_black  $white
-		inactive_workspace $black         $black         $white
+		focused_workspace  $base03        $base03        $base07
+		active_workspace   $base02        $base02        $base05
+		inactive_workspace $base02        $base02        $base05
 		urgent_workspace   $red           $red           $full_white
 	}
 }
@@ -202,8 +206,8 @@ bindsym $mod+Shift+e mode "$mode_system"
 # }}}
 
 # Default Programs: {{{
-set $term           --no-startup-id st -f "FuraCode Nerd Font:pixelsize=12"
-set $browser        firefox
+set $term           --no-startup-id st
+set $browser        surf -a A duckduckgo.com
 # }}}
 
 # Program Bindings: {{{

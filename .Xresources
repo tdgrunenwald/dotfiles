@@ -1,40 +1,68 @@
 ! ~/.Xresources
-Xcursor.theme: Adwaita
+Xcursor.theme:  Adwaita
 
-! colorscheme: mocha dark (from https://terminal.sexy)
-! special
-*.foreground:   #d0c8c6
-*.background:   #3b3228
-*.cursorColor:  #d0c8c6
+! fonts
+i3.font:        pango:FuraCode Nerd Font 8
+st.font:        FuraCode Nerd Font:pixelsize=12
+
+#define default_bg   #2d2d2d
+#define bright_bg    #393939
+#define select_bg    #515151
+#define line_hl      #747369
+#define dark_fg      #a09f93
+#define default_fg   #d3d0c8
+#define light_fg     #e8e6df
+#define light_bg     #f2f0ec
+#define red          #f2777a
+#define br_orange    #f99157
+#define yellow       #ffcc66
+#define green        #99cc99
+#define cyan         #66cccc
+#define blue         #6699cc
+#define magenta      #cc99cc
+#define orange       #d27b53
+
+*base00: default_bg
+*base01: bright_bg
+*base02: select_bg
+*base03: line_hl
+*base04: dark_fg
+*base05: default_fg
+*base06: light_fg
+*base07: light_bg
+
+*foreground:   default_fg
+*background:   default_bg
+*cursorColor:  default_fg
 
 ! black
-*.color0:       #3b3228
-*.color8:       #7e705a
+*color0:       default_bg
+*color8:       bright_bg
 
 ! red
-*.color1:       #cb6077
-*.color9:       #cb6077
+*color1:       red
+*color9:       red
 
 ! green
-*.color2:       #beb55b
-*.color10:      #beb55b
+*color2:       green
+*color10:      green
 
 ! yellow
-*.color3:       #f4bc87
-*.color11:      #f4bc87
+*color3:       yellow
+*color11:      yellow
 
 ! blue
-*.color4:       #8ab3b5
-*.color12:      #8ab3b5
+*color4:       blue
+*color12:      blue
 
 ! magenta
-*.color5:       #a89bb9
-*.color13:      #a89bb9
+*color5:       magenta
+*color13:      magenta
 
 ! cyan
-*.color6:       #7bbda4
-*.color14:      #7bbda4
+*color6:       cyan
+*color14:      cyan
 
 ! white
-*.color7:       #d0c8c6
-*.color15:      #f5eeeb
+*color7:       light_fg
+*color15:      light_bg
