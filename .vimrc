@@ -21,8 +21,9 @@ syntax on
 filetype plugin indent on
 colorscheme desert
 
-" Helps with slow release of shift key when trying to exit
+" Fix common typos
 nnoremap :Q :q
+nnoremap :W :w
 
 " Automatically insert matching brace|quote
 inoremap ( ()<ESC>i
