@@ -29,7 +29,7 @@ noremap <F5> :make<Enter>
 " Colors
 highlight Normal ctermbg=8
 highlight EndOfBuffer ctermbg=0
-highlight CursorLine NONE ctermbg=darkgrey
-highlight CursorLineNr ctermbg=darkgrey ctermfg=15
+highlight CursorLine NONE ctermbg=0
+highlight CursorLineNr ctermbg=0 ctermfg=15
 highlight ColorColumn ctermbg=0
 let &colorcolumn=join(range(&textwidth, 300), ",")
