@@ -1,5 +1,4 @@
 " ~/.vimrc
-
 " Basic settings
 set foldmethod=marker
 set tabstop=4
@@ -15,6 +14,7 @@ set incsearch
 set textwidth=80
 set showcmd
 set background=dark
+set cursorline
 
 " Syntax and filetype settings
 syntax on
@@ -30,6 +30,10 @@ inoremap ( ()<ESC>i
 inoremap { {}<ESC>i
 inoremap [ []<ESC>i
 inoremap " ""<ESC>i
+inoremap ' ''<ESC>i
+
+" Make
+nnoremap <F5> :make<Enter>
 
 " Autocommands
 if has("autocmd")
@@ -42,10 +46,18 @@ if has("autocmd")
 		autocmd BufNewFile * if !empty(expand("%:t:e")) && !empty(glob("~/.vim/skel/" . expand('%:t:e'))) | 0r ~/.vim/skel/%:t:e | endif
 
 		" Compile hotkeys
-		autocmd FileType markdown map <F5> :!pandoc -f markdown -t latex -s -o %:p:r.pdf %<enter>
-		autocmd FileType tex map <F5> :!pdflatex -output-directory=%:p:h %<enter>
+		"autocmd FileType markdown map <F5> :!pandoc -f markdown -t latex -s -o %:p:r.pdf %<enter>
+		"autocmd FileType tex map <F5> :!pdflatex -output-directory=%:p:h %<enter>
 	augroup END
 endif
+
+" Colors
+highlight Normal ctermbg=8
+highlight EndOfBuffer ctermbg=0
+highlight CursorLine NONE ctermbg=0
+highlight CursorLineNr ctermbg=0 ctermfg=15
+highlight ColorColumn ctermbg=0
+let &colorcolumn=join(range(&textwidth, 300), ",")
 
 " Set cursor shape to IBeam in insert mode, underline in replace mode, and block in normal mode.
 " Sources http://vim.wikia.com/wiki/Change_cursor_shape_in_different_modes

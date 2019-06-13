@@ -22,6 +22,7 @@ inoremap ( ()<ESC>i
 inoremap { {}<ESC>i
 inoremap [ []<ESC>i
 inoremap " ""<ESC>i
+inoremap ' ''<ESC>i
 
 " Make
 noremap <F5> :make<Enter>
