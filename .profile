@@ -19,6 +19,9 @@ export LESSOPEN=""
 # Add scripts to path
 export PATH=$PATH:$HOME/.scripts:$HOME/.local/bin
 
+# Add man pages for non-distro software to manpath
+export MANPATH=$MANPATH:/usr/local/man
+
 # Set default programs
 export EDITOR="vim"
 export BROWSER="firefox"

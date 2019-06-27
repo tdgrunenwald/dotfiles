@@ -4,7 +4,7 @@
 setxkbmap -option terminate:ctrl_alt_bksp
 
 # set monitor profile
-autorandr --change --default undocked
+autorandr --change --force --default undocked
 
 # merge settings in Xresources
 [ -f ~/.Xresources ] && xrdb -I $HOME -merge ~/.Xresources

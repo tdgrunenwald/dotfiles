@@ -208,7 +208,7 @@ bindsym $mod+Shift+e mode "$mode_system"
 
 # Default Programs: {{{
 set $term           --no-startup-id st
-set $browser        surf -a A duckduckgo.com
+set $browser        qutebrowser
 # }}}
 
 # Program Bindings: {{{
@@ -229,7 +229,7 @@ bindsym $mod+b exec $browser
 set $dmenu_run      --no-startup-id dmenu_run -p Bin -fn FuraCode\ Nerd\ Font:pixelsize=12
 set $dmenu_desktop  --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -p Apps -fn FuraCode\ Nerd\ Font:pixelsize=12"
 set $dmenu_pass     --no-startup-id passmenu -i -p Pass -fn FuraCode\ Nerd\ Font:pixelsize=12
-set $dmenu_unicode  --no-startup-id dmenu_unicode -i -l 20
+set $dmenu_unicode  --no-startup-id dmenu-unicode -i -l 20
 
 # all executables
 bindsym $mod+r exec $dmenu_run

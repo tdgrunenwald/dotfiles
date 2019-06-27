@@ -67,3 +67,10 @@ dropdown.font:  FuraCode Nerd Font:pixelsize=12
 ! white
 *color7:       light_fg
 *color15:      light_bg
+
+! qutebrowser
+qutebrowser.color16:  select_bg
+qutebrowser.color17:  line_hl
+qutebrowser.color18:  dark_fg
+qutebrowser.color19:  default_fg
+
