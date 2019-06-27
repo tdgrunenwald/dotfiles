@@ -1,2 +1,4 @@
 .vim/.netrwhist
 .*.sw[op]
+.config/qutebrowser/qsettings/*
+.config/qutebrowser/quickmarks

@@ -3,6 +3,9 @@
 # ctrl+alt+bksp to kill X
 setxkbmap -option terminate:ctrl_alt_bksp
 
+# hide mouse cursor after a few idle seconds
+unclutter -idle 2 -root -grab &
+
 # set monitor profile
 autorandr --change --force --default undocked
 
