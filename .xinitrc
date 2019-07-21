@@ -4,7 +4,7 @@
 setxkbmap -option terminate:ctrl_alt_bksp
 
 # hide mouse cursor after a few idle seconds
-unclutter -idle 2 -root -grab &
+unclutter -idle 2 -root &
 
 # set monitor profile
 autorandr --change --force --default undocked

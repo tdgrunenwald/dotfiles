@@ -1,20 +1,30 @@
 " ~/.vimrc
-" Basic settings
+" Enter the current millenium
+set nocompatible
+
+" Formatting
 set foldmethod=marker
 set tabstop=4
 set shiftwidth=4
 set noexpandtab
-set nocompatible
+set autoindent
+set cindent
+set textwidth=80
+
+" Appearance
+set cursorline
 set number
 set relativenumber
-set autoindent
-set smartindent
-set hlsearch
-set incsearch
-set textwidth=80
 set showcmd
 set background=dark
-set cursorline
+
+" Search behavior
+set hlsearch
+set incsearch
+
+" Fuzzy find
+set path+=**
+set wildmenu
 
 " Syntax and filetype settings
 syntax on
@@ -56,6 +66,7 @@ highlight Normal ctermbg=8
 highlight EndOfBuffer ctermbg=0
 highlight CursorLine NONE ctermbg=0
 highlight CursorLineNr ctermbg=0 ctermfg=15
+highlight LineNr ctermfg=4
 highlight ColorColumn ctermbg=0
 let &colorcolumn=join(range(&textwidth, 300), ",")
 
