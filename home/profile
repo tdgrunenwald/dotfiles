@@ -17,7 +17,7 @@ export LESSSECURE=1
 export LESSOPEN=""
 
 # Add scripts to path
-export PATH=$PATH:$HOME/.scripts:$HOME/.local/bin
+export PATH=$PATH:$HOME/.config/scripts:$HOME/.local/bin
 
 # Add man pages for non-distro software to manpath
 export MANPATH=$MANPATH:/usr/local/man
