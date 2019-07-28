@@ -1,16 +1,12 @@
-# Source global config
+# ~/.bashrc
 [ -f /etc/bash/bashrc ] && source /etc/bash/bashrc
 
-# auto cd to directory by typing its name
 shopt -s autocd
 
-# Prompt before removing multiple files and show verbose output
 alias rm='rm -I -v'
-
-# Other useful aliases
 alias ls='ls --color=auto --group-directories-first'
+alias vim='vim -u ~/.config/vim/vimrc'
 
-# Set current tty for gpg-agent
 export GPG_TTY=$(tty)
 
 # Set ls colors {{{

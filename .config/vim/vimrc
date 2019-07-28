@@ -1,4 +1,7 @@
 " ~/.vimrc
+" Set personal vim directory under ~/.config for consistency
+set runtimepath=~/.config/vim,$VIMRUNTIME
+
 " Enter the current millenium
 set nocompatible
 
@@ -54,10 +57,6 @@ if has("autocmd")
 		" Load a template for the given file extention if it exists
 		" Templates should be ~/.vim/skel and have the same name as the extension
 		autocmd BufNewFile * if !empty(expand("%:t:e")) && !empty(glob("~/.vim/skel/" . expand('%:t:e'))) | 0r ~/.vim/skel/%:t:e | endif
-
-		" Compile hotkeys
-		"autocmd FileType markdown map <F5> :!pandoc -f markdown -t latex -s -o %:p:r.pdf %<enter>
-		"autocmd FileType tex map <F5> :!pdflatex -output-directory=%:p:h %<enter>
 	augroup END
 endif
 
