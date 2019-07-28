@@ -1,4 +1,7 @@
-.vim/.netrwhist
+vim/.netrwhist
 .*.sw[op]
-.config/qutebrowser/qsettings/*
-.config/qutebrowser/quickmarks
+qutebrowser/qsettings/*
+qutebrowser/quickmarks
+mimeapps.list
+user-dirs.dirs
+
