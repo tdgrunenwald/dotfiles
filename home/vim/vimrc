@@ -29,6 +29,9 @@ set incsearch
 set path+=**
 set wildmenu
 
+" Editing
+set backspace=start
+
 " Syntax and filetype settings
 syntax on
 filetype plugin indent on
@@ -47,6 +50,10 @@ inoremap ' ''<ESC>i
 
 " Make
 nnoremap <F5> :make<Enter>
+
+" Quick comment
+nnoremap ,c :s/^\/\/\\|^/\/\/<CR>:noh<CR>
+nnoremap ,C :s/^\/\///<CR>:noh<CR>
 
 " Autocommands
 if has("autocmd")
