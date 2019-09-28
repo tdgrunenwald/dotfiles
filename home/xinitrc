@@ -17,6 +17,8 @@ autorandr --change --force --default undocked
 
 # load custom keybindings for non DE specific things e.g. media keys
 [ -f ~/.config/xbindkeys/config ] && xbindkeys -f ~/.config/xbindkeys/config
+xmodmap -e "clear Lock"
+xmodmap -e "keysym Caps_Lock = Escape"
 
 # start i3 window manager
 exec i3

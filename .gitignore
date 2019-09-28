@@ -5,3 +5,5 @@ qutebrowser/quickmarks
 mimeapps.list
 user-dirs.dirs
 
+# ignore everything unless specifically added
+*/*

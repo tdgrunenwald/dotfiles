@@ -1,6 +1,7 @@
 [user]
 	name = Tyler Grunenwald
 	email = tylergrunenwald@gmail.com
+
 [gpg]
 	program = gpg2
 
@@ -10,13 +11,17 @@
 	au = add -u
 	b = branch
 	bl = branch -l
+	bd = branch -D
 	c = commit
-	co = checkout
 	cm = commit -m
+	ca = commit --amend
+	co = checkout
+	cob = checkout -b
 	d = diff
-	l = log
+	l = log --oneline
 	r = remote
 	rv = remote -v
+	ra = remote add
 	s = status
 	sm = submodule
 

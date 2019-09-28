@@ -9,10 +9,10 @@
 	XF86AudioMute
 
 # Brightness control
-"BR=$(cat /sys/class/backlight/radeon_bl0/brightness); echo $(( $BR + 10 )) | sudo tee /sys/class/backlight/radeon_bl0/brightness; unset $BR"
+"BR=$(cat /sys/class/backlight/radeon_bl0/actual_brightness); echo $(( $BR + 20 )) | sudo tee /sys/class/backlight/radeon_bl0/brightness; unset $BR"
 	XF86MonBrightnessUp
 
-"BR=$(cat /sys/class/backlight/radeon_bl0/brightness); echo $(( $BR - 10 )) | sudo tee /sys/class/backlight/radeon_bl0/brightness; unset $BR"
+"BR=$(cat /sys/class/backlight/radeon_bl0/actual_brightness); echo $(( $BR - 20 )) | sudo tee /sys/class/backlight/radeon_bl0/brightness; unset $BR"
 	XF86MonBrightnessDown
 
 # Display switching
