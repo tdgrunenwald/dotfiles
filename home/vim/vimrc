@@ -1,6 +1,6 @@
 " ~/.vimrc
 " Set personal vim directory under ~/.config for consistency
-set runtimepath=~/.config/vim,$VIMRUNTIME
+"set runtimepath=~/.config/vim,$VIMRUNTIME " currently using ~/.vim/
 
 " Enter the current millenium
 set nocompatible
@@ -35,7 +35,6 @@ set backspace=start
 " Syntax and filetype settings
 syntax on
 filetype plugin indent on
-colorscheme desert
 
 " Fix common typos
 nnoremap :Q :q
@@ -68,17 +67,14 @@ if has("autocmd")
 endif
 
 " Colors
-highlight Normal ctermbg=8
-highlight EndOfBuffer ctermbg=0
-highlight CursorLine NONE ctermbg=0
-highlight CursorLineNr ctermbg=0 ctermfg=15
-highlight LineNr ctermfg=4
-highlight ColorColumn ctermbg=0
-let &colorcolumn=join(range(&textwidth, 300), ",")
+if filereadable(expand("~/.vim/base16scheme"))
+	let base16colorspace=256
+	source ~/.vim/base16scheme
+endif
 
 " Set cursor shape to IBeam in insert mode, underline in replace mode, and block in normal mode.
 " Sources http://vim.wikia.com/wiki/Change_cursor_shape_in_different_modes
-"	      https://vi.stackexchange.com/questions/3379/cursor-shape-under-vim-tmux
+"         https://vi.stackexchange.com/questions/3379/cursor-shape-under-vim-tmux
 "         https://vi.stackexchange.com/questions/7306/vim-normal-and-insert-mode-cursor-not-changing-in-gnu-screen
 if &term=="screen" || &term=="screen-256color"
 	let &t_SI = "\eP\e[6 q\e\\"

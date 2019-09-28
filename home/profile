@@ -3,6 +3,9 @@
 # Include definitions from bashrc
 source ~/.bashrc
 
+# For Base16 colors on console
+clear
+
 # Bash history settings
 export HISTFILE=$HOME/.history
 export HISTFILESIZE=1000
