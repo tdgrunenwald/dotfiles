@@ -11,6 +11,7 @@ shopt -s autocd
 
 alias rm='rm -I -v'
 alias ls='ls --color=auto --group-directories-first'
+alias ssh='~/.config/scripts/color-ssh'
 
 export GPG_TTY=$(tty)
 

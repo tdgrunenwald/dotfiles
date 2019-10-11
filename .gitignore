@@ -1,9 +1,11 @@
-vim/.netrwhist
 .*.sw[op]
-qutebrowser/qsettings/*
+qutebrowser/qsettings
 qutebrowser/quickmarks
+qutebrowser/bookmarks
 mimeapps.list
 user-dirs.dirs
+home/vim/colors
+home/vim/.netrwhist
 
 # ignore everything unless specifically added
-*/*
+#*/* # actually...most of the time I don't like this

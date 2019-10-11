@@ -1,0 +1,4 @@
+#!/bin/sh
+# Restores base16-shell theme when SSH session is closed
+ssh $@
+. ~/.base16_theme
