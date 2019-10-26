@@ -1,6 +1,10 @@
 # ~/.bashrc
 [ -f /etc/bash/bashrc ] && source /etc/bash/bashrc
 
+# Non-typical vimrc location
+export VIMINIT='source $MYVIMRC'
+export MYVIMRC=$HOME/.config/vim/vimrc
+
 # Chris Kempson Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && \

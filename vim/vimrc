@@ -1,6 +1,8 @@
 " ~/.vimrc
+" Tyler Grunenwald | github.com/tdgrunenwald
+"
 " Set personal vim directory under ~/.config for consistency
-"set runtimepath=~/.config/vim,$VIMRUNTIME " currently using ~/.vim/
+set runtimepath=~/.config/vim,$VIMRUNTIME
 
 " Enter the current millenium
 set nocompatible
@@ -67,9 +69,9 @@ if has("autocmd")
 endif
 
 " Colors
-if filereadable(expand("~/.vim/base16scheme"))
+if filereadable(expand("~/.config/vim/base16scheme"))
 	let base16colorspace=256
-	source ~/.vim/base16scheme
+	source ~/.config/vim/base16scheme
 endif
 
 " Set cursor shape to IBeam in insert mode, underline in replace mode, and block in normal mode.

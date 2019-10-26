@@ -4,8 +4,17 @@ qutebrowser/quickmarks
 qutebrowser/bookmarks
 mimeapps.list
 user-dirs.dirs
-home/vim/colors
-home/vim/.netrwhist
+vim/colors
+vim/.netrwhist
+vim/base16scheme
+GIMP
+blender
+chromium
+configstore
+discord
+gtk-2.0
+pulse
+unity3d
+visualboyadvance-m
 
-# ignore everything unless specifically added
-#*/* # actually...most of the time I don't like this
+
