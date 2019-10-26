@@ -29,8 +29,7 @@ markup=none
 
 # Package Updates
 [update]
-interval=once
-signal=11
+interval=360
 
 # Memory usage
 [memory]

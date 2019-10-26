@@ -1,16 +1,11 @@
 #!/bin/sh
 # Tyler Grunenwald | github.com/tdgrunenwald
+# Going to use a runit service to periodically download updates
+# This status script just reports if there are any available to install
 ICON="ﰵ"
+NPKGS=`xbps-install -un | wc -l`	# Count the available updates
+[ $NPKGS -eq 0 ] && exit 0			# Exit if no updates available
 
-# Sync xbps repo data with remote
-sudo xbps-install -S > /dev/null
-
-# Count the available updates
-UCOUNT=`xbps-install -un | wc -l`
-
-# If there are updates available, show notifier
-if [ $UCOUNT -gt 0 ]; then
-	echo "$UCOUNT $ICON"
-	echo "$UCOUNT $ICON"
-	echo "#FF8000"
-fi
+echo "$ICON $NPKGS"
+echo "$ICON $NPKGS"
+echo "#FF8000"
