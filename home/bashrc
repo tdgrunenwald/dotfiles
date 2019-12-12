@@ -5,11 +5,8 @@
 export VIMINIT='source $MYVIMRC'
 export MYVIMRC=$HOME/.config/vim/vimrc
 
-# Chris Kempson Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/"
-[ -n "$PS1" ] && \
-	[ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-		eval "$("$BASE16_SHELL/profile_helper.sh")"
+# Chris Kempson Base16 Shell theme
+source $HOME/.config/base16-shell/scripts/base16-default-dark.sh
 
 shopt -s autocd
 

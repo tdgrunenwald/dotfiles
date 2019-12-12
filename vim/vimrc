@@ -2,13 +2,16 @@
 " Tyler Grunenwald | github.com/tdgrunenwald
 "
 " Set personal vim directory under ~/.config for consistency
-set runtimepath=~/.config/vim,$VIMRUNTIME
+set runtimepath=$HOME/.config/vim,$VIMRUNTIME
+
+" Include global tags file in tags file search path
+set tags=./tags,./TAGS,\tags,TAGS,$HOME/.config/vim/tags
 
 " Enter the current millenium
 set nocompatible
 
 " Formatting
-set foldmethod=marker
+set foldmethod=syntax
 set tabstop=4
 set shiftwidth=4
 set noexpandtab
@@ -19,7 +22,6 @@ set textwidth=80
 " Appearance
 set cursorline
 set number
-set relativenumber
 set showcmd
 set background=dark
 
@@ -52,27 +54,19 @@ inoremap ' ''<ESC>i
 " Make
 nnoremap <F5> :make<Enter>
 
-" Quick comment
-nnoremap ,c :s/^\/\/\\|^/\/\/<CR>:noh<CR>
-nnoremap ,C :s/^\/\///<CR>:noh<CR>
-
 " Autocommands
 if has("autocmd")
 	augroup vimrc
 		" Clear autocommands
 		autocmd!
 
-		" Load a template for the given file extention if it exists
-		" Templates should be ~/.vim/skel and have the same name as the extension
-		autocmd BufNewFile * if !empty(expand("%:t:e")) && !empty(glob("~/.vim/skel/" . expand('%:t:e'))) | 0r ~/.vim/skel/%:t:e | endif
+		" Add auto commands here...
 	augroup END
 endif
 
-" Colors
-if filereadable(expand("~/.config/vim/base16scheme"))
-	let base16colorspace=256
-	source ~/.config/vim/base16scheme
-endif
+" Colorscheme
+let base16colorspace=256
+colorscheme base16-default-dark
 
 " Set cursor shape to IBeam in insert mode, underline in replace mode, and block in normal mode.
 " Sources http://vim.wikia.com/wiki/Change_cursor_shape_in_different_modes
