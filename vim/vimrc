@@ -1,14 +1,23 @@
-" ~/.vimrc
 " Tyler Grunenwald | github.com/tdgrunenwald
-"
 " Set personal vim directory under ~/.config for consistency
-set runtimepath=$HOME/.config/vim,$VIMRUNTIME
+set runtimepath=$VIM_HOME,$VIMRUNTIME
+
+if empty(glob('$VIM_HOME/autoload/plug.vim'))
+	silent !curl -fLo $VIM_HOME/autoload/plug.vim --create-dirs
+		\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+endif
+
+call plug#begin('$VIM_HOME/vim-plug')
+call plug#end()
 
 " Include global tags file in tags file search path
 set tags=./tags,./TAGS,\tags,TAGS,$HOME/.config/vim/tags
 
 " Enter the current millenium
 set nocompatible
+
+" Access clipboard via the unnamed register
+set clipboard=autoselect,unnamedplus
 
 " Formatting
 set foldmethod=syntax
@@ -20,7 +29,7 @@ set cindent
 set textwidth=80
 
 " Appearance
-set cursorline
+"set cursorline
 set number
 set showcmd
 set background=dark
@@ -34,7 +43,7 @@ set path+=**
 set wildmenu
 
 " Editing
-set backspace=start
+set backspace=start,eol
 
 " Syntax and filetype settings
 syntax on
@@ -43,16 +52,6 @@ filetype plugin indent on
 " Fix common typos
 nnoremap :Q :q
 nnoremap :W :w
-
-" Automatically insert matching brace|quote
-inoremap ( ()<ESC>i
-inoremap { {}<ESC>i
-inoremap [ []<ESC>i
-inoremap " ""<ESC>i
-inoremap ' ''<ESC>i
-
-" Make
-nnoremap <F5> :make<Enter>
 
 " Autocommands
 if has("autocmd")
@@ -63,10 +62,6 @@ if has("autocmd")
 		" Add auto commands here...
 	augroup END
 endif
-
-" Colorscheme
-let base16colorspace=256
-colorscheme base16-default-dark
 
 " Set cursor shape to IBeam in insert mode, underline in replace mode, and block in normal mode.
 " Sources http://vim.wikia.com/wiki/Change_cursor_shape_in_different_modes

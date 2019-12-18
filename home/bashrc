@@ -2,8 +2,9 @@
 [ -f /etc/bash/bashrc ] && source /etc/bash/bashrc
 
 # Non-typical vimrc location
+export VIM_HOME=$HOME/.config/vim
+export MYVIMRC=$VIM_HOME/vimrc
 export VIMINIT='source $MYVIMRC'
-export MYVIMRC=$HOME/.config/vim/vimrc
 
 # Chris Kempson Base16 Shell theme
 source $HOME/.config/base16-shell/scripts/base16-default-dark.sh
