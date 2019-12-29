@@ -1,0 +1,23 @@
+[gpg]
+	program = gpg2
+
+[alias]
+	a = add
+	aa = add --all
+	au = add -u
+	b = branch
+	bl = branch -l
+	bd = branch -D
+	c = commit
+	cm = commit -m
+	ca = commit --amend
+	co = checkout
+	cob = checkout -b
+	d = diff
+	l = log --oneline
+	r = remote
+	rv = remote -v
+	ra = remote add
+	s = status
+	sm = submodule
+
