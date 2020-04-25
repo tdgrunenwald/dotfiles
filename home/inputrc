@@ -20,6 +20,7 @@ set vi-cmd-mode-string :
 set keymap vi-insert
 	Control-l: clear-screen
 	Control-a: beginning-of-line
+	Control-e: end-of-line
 
 # Don't interpret pasted characters as commands
 set enable-bracketed-paste on

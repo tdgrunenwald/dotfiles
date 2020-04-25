@@ -13,7 +13,8 @@ autorandr --change --force --default undocked
 [ -f ~/.Xresources ] && xrdb -I $HOME -merge ~/.Xresources
 
 # set background
-[ -f ~/.fehbg ] && ~/.fehbg
+[ -f ~/wallpapers/sts-atlantis.jpg ] \
+		&& sxiv -f -s width ~/wallpapers/sts-atlantis.jpg &
 
 # load custom keybindings for non DE specific things e.g. media keys
 [ -f ~/.config/xbindkeys/config ] && xbindkeys -f ~/.config/xbindkeys/config

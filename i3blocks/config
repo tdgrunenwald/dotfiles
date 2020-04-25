@@ -27,6 +27,10 @@ separator_block_width=15
 separator=false
 markup=none
 
+# Rsync in progress
+[rsync]
+signal=9
+
 # Package Updates
 [update]
 interval=360
@@ -35,12 +39,12 @@ interval=360
 [memory]
 label=
 separator=false
-interval=30
+interval=5
 
 # Thermals
 [thermal]
 label=
-interval=30
+interval=5
 
 # Volume indicator
 [volume]
@@ -54,16 +58,16 @@ markup=pango
 
 # Battery indicator
 [battery]
-interval=30
+interval=2
 
 # Date
 [date]
 command=date '+%a, %d %b %Y'
-interval=3600
+interval=5
 
 # Time
 [time]
 command=echo "<span weight=\"bold\">`date '+%I:%M:%S'`</span>"
 interval=1
-min_width='HH:MM:SS '
+min_width='HH:MM:SS'
 markup=pango

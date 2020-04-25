@@ -1,0 +1,5 @@
+#!/bin/sh
+STATUS="\n\n"
+[ -e /tmp/rsyncerror ] && STATUS="罹 sync error\n罹 sync error\n"
+[ -e /tmp/rsyncinprogress ] && STATUS="痢 syncing...\n痢 syncing...\n"
+echo $STATUS
