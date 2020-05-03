@@ -21,3 +21,6 @@
 	s = status
 	sm = submodule
 
+[user]
+	email = tylergrunenwald@gmail.com
+	name = Tyler Grunenwald
